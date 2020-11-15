@@ -34,6 +34,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_AllInformation = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -47,6 +48,8 @@
             this.button_LoadPicture = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox_AddTown = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.button_Add = new System.Windows.Forms.Button();
             this.textBox_AddPasportNumber = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -62,9 +65,6 @@
             this.textBox_AddFirstName = new System.Windows.Forms.TextBox();
             this.tabPage_AddValiants = new System.Windows.Forms.TabPage();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox_AddTown = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage_AllInformation.SuspendLayout();
@@ -131,11 +131,20 @@
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(699, 133);
+            this.panel2.Location = new System.Drawing.Point(693, 169);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(349, 436);
             this.panel2.TabIndex = 1;
             this.panel2.Visible = false;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(167, 351);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(41, 13);
+            this.label14.TabIndex = 8;
+            this.label14.Text = "label14";
             // 
             // label13
             // 
@@ -271,6 +280,22 @@
             this.panel1.Size = new System.Drawing.Size(522, 517);
             this.panel1.TabIndex = 0;
             // 
+            // textBox_AddTown
+            // 
+            this.textBox_AddTown.Location = new System.Drawing.Point(197, 245);
+            this.textBox_AddTown.Name = "textBox_AddTown";
+            this.textBox_AddTown.Size = new System.Drawing.Size(192, 20);
+            this.textBox_AddTown.TabIndex = 14;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(45, 248);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(37, 13);
+            this.label15.TabIndex = 13;
+            this.label15.Text = "Город";
+            // 
             // button_Add
             // 
             this.button_Add.Location = new System.Drawing.Point(35, 290);
@@ -380,7 +405,7 @@
             // 
             this.tabPage_AddValiants.Location = new System.Drawing.Point(4, 22);
             this.tabPage_AddValiants.Name = "tabPage_AddValiants";
-            this.tabPage_AddValiants.Size = new System.Drawing.Size(1051, 552);
+            this.tabPage_AddValiants.Size = new System.Drawing.Size(1282, 611);
             this.tabPage_AddValiants.TabIndex = 2;
             this.tabPage_AddValiants.Text = "Добавление нарушений";
             this.tabPage_AddValiants.UseVisualStyleBackColor = true;
@@ -388,31 +413,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(167, 351);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(41, 13);
-            this.label14.TabIndex = 8;
-            this.label14.Text = "label14";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(45, 248);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(37, 13);
-            this.label15.TabIndex = 13;
-            this.label15.Text = "Город";
-            // 
-            // textBox_AddTown
-            // 
-            this.textBox_AddTown.Location = new System.Drawing.Point(197, 245);
-            this.textBox_AddTown.Name = "textBox_AddTown";
-            this.textBox_AddTown.Size = new System.Drawing.Size(192, 20);
-            this.textBox_AddTown.TabIndex = 14;
             // 
             // Dormytory
             // 
