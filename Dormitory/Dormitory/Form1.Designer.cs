@@ -35,6 +35,14 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_AllInformation = new System.Windows.Forms.TabPage();
             this.panel_InfoStudent = new System.Windows.Forms.Panel();
+            this.textBox_UpdatePasportNumber = new System.Windows.Forms.TextBox();
+            this.textBox_UpdatePasportSeries = new System.Windows.Forms.TextBox();
+            this.textBox_UpdateTown = new System.Windows.Forms.TextBox();
+            this.textBox_UpdateAge = new System.Windows.Forms.TextBox();
+            this.textBox_UpdateSex = new System.Windows.Forms.TextBox();
+            this.textBox_UpdateLastName = new System.Windows.Forms.TextBox();
+            this.textBox_UpdateName = new System.Windows.Forms.TextBox();
+            this.textBox_UpdateFirstName = new System.Windows.Forms.TextBox();
             this.button_ClosePanel = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -62,14 +70,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.подробнаяИнформацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox_UpdateFirstName = new System.Windows.Forms.TextBox();
-            this.textBox_UpdateName = new System.Windows.Forms.TextBox();
-            this.textBox_UpdateLastName = new System.Windows.Forms.TextBox();
-            this.textBox_UpdateSex = new System.Windows.Forms.TextBox();
-            this.textBox_UpdateAge = new System.Windows.Forms.TextBox();
-            this.textBox_UpdateTown = new System.Windows.Forms.TextBox();
-            this.textBox_UpdatePasportSeries = new System.Windows.Forms.TextBox();
-            this.textBox_UpdatePasportNumber = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage_AllInformation.SuspendLayout();
@@ -144,6 +144,70 @@
             this.panel_InfoStudent.TabIndex = 1;
             this.panel_InfoStudent.Visible = false;
             // 
+            // textBox_UpdatePasportNumber
+            // 
+            this.textBox_UpdatePasportNumber.Location = new System.Drawing.Point(111, 433);
+            this.textBox_UpdatePasportNumber.Name = "textBox_UpdatePasportNumber";
+            this.textBox_UpdatePasportNumber.Size = new System.Drawing.Size(158, 20);
+            this.textBox_UpdatePasportNumber.TabIndex = 16;
+            this.textBox_UpdatePasportNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_UpdatePasportSeries
+            // 
+            this.textBox_UpdatePasportSeries.Location = new System.Drawing.Point(111, 407);
+            this.textBox_UpdatePasportSeries.Name = "textBox_UpdatePasportSeries";
+            this.textBox_UpdatePasportSeries.Size = new System.Drawing.Size(158, 20);
+            this.textBox_UpdatePasportSeries.TabIndex = 15;
+            this.textBox_UpdatePasportSeries.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_UpdateTown
+            // 
+            this.textBox_UpdateTown.Location = new System.Drawing.Point(111, 381);
+            this.textBox_UpdateTown.Name = "textBox_UpdateTown";
+            this.textBox_UpdateTown.Size = new System.Drawing.Size(158, 20);
+            this.textBox_UpdateTown.TabIndex = 14;
+            this.textBox_UpdateTown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_UpdateAge
+            // 
+            this.textBox_UpdateAge.Location = new System.Drawing.Point(111, 355);
+            this.textBox_UpdateAge.Name = "textBox_UpdateAge";
+            this.textBox_UpdateAge.Size = new System.Drawing.Size(158, 20);
+            this.textBox_UpdateAge.TabIndex = 13;
+            this.textBox_UpdateAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_UpdateSex
+            // 
+            this.textBox_UpdateSex.Location = new System.Drawing.Point(111, 329);
+            this.textBox_UpdateSex.Name = "textBox_UpdateSex";
+            this.textBox_UpdateSex.Size = new System.Drawing.Size(158, 20);
+            this.textBox_UpdateSex.TabIndex = 12;
+            this.textBox_UpdateSex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_UpdateLastName
+            // 
+            this.textBox_UpdateLastName.Location = new System.Drawing.Point(111, 303);
+            this.textBox_UpdateLastName.Name = "textBox_UpdateLastName";
+            this.textBox_UpdateLastName.Size = new System.Drawing.Size(158, 20);
+            this.textBox_UpdateLastName.TabIndex = 12;
+            this.textBox_UpdateLastName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_UpdateName
+            // 
+            this.textBox_UpdateName.Location = new System.Drawing.Point(111, 277);
+            this.textBox_UpdateName.Name = "textBox_UpdateName";
+            this.textBox_UpdateName.Size = new System.Drawing.Size(158, 20);
+            this.textBox_UpdateName.TabIndex = 11;
+            this.textBox_UpdateName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_UpdateFirstName
+            // 
+            this.textBox_UpdateFirstName.Location = new System.Drawing.Point(111, 251);
+            this.textBox_UpdateFirstName.Name = "textBox_UpdateFirstName";
+            this.textBox_UpdateFirstName.Size = new System.Drawing.Size(158, 20);
+            this.textBox_UpdateFirstName.TabIndex = 10;
+            this.textBox_UpdateFirstName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // button_ClosePanel
             // 
             this.button_ClosePanel.Image = ((System.Drawing.Image)(resources.GetObject("button_ClosePanel.Image")));
@@ -167,7 +231,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1039, 612);
+            this.dataGridView1.Size = new System.Drawing.Size(1049, 612);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseUp);
@@ -180,7 +244,7 @@
             this.tabPage_AddStudent.Location = new System.Drawing.Point(4, 22);
             this.tabPage_AddStudent.Name = "tabPage_AddStudent";
             this.tabPage_AddStudent.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_AddStudent.Size = new System.Drawing.Size(1282, 611);
+            this.tabPage_AddStudent.Size = new System.Drawing.Size(1014, 547);
             this.tabPage_AddStudent.TabIndex = 1;
             this.tabPage_AddStudent.Text = "Добавление студента";
             this.tabPage_AddStudent.UseVisualStyleBackColor = true;
@@ -351,7 +415,7 @@
             // 
             this.tabPage_AddValiants.Location = new System.Drawing.Point(4, 22);
             this.tabPage_AddValiants.Name = "tabPage_AddValiants";
-            this.tabPage_AddValiants.Size = new System.Drawing.Size(1282, 611);
+            this.tabPage_AddValiants.Size = new System.Drawing.Size(1014, 547);
             this.tabPage_AddValiants.TabIndex = 2;
             this.tabPage_AddValiants.Text = "Добавление нарушений";
             this.tabPage_AddValiants.UseVisualStyleBackColor = true;
@@ -380,70 +444,6 @@
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
             this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.удалитьToolStripMenuItem.Text = "Удалить";
-            // 
-            // textBox_UpdateFirstName
-            // 
-            this.textBox_UpdateFirstName.Location = new System.Drawing.Point(111, 251);
-            this.textBox_UpdateFirstName.Name = "textBox_UpdateFirstName";
-            this.textBox_UpdateFirstName.Size = new System.Drawing.Size(158, 20);
-            this.textBox_UpdateFirstName.TabIndex = 10;
-            this.textBox_UpdateFirstName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox_UpdateName
-            // 
-            this.textBox_UpdateName.Location = new System.Drawing.Point(111, 277);
-            this.textBox_UpdateName.Name = "textBox_UpdateName";
-            this.textBox_UpdateName.Size = new System.Drawing.Size(158, 20);
-            this.textBox_UpdateName.TabIndex = 11;
-            this.textBox_UpdateName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox_UpdateLastName
-            // 
-            this.textBox_UpdateLastName.Location = new System.Drawing.Point(111, 303);
-            this.textBox_UpdateLastName.Name = "textBox_UpdateLastName";
-            this.textBox_UpdateLastName.Size = new System.Drawing.Size(158, 20);
-            this.textBox_UpdateLastName.TabIndex = 12;
-            this.textBox_UpdateLastName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox_UpdateSex
-            // 
-            this.textBox_UpdateSex.Location = new System.Drawing.Point(111, 329);
-            this.textBox_UpdateSex.Name = "textBox_UpdateSex";
-            this.textBox_UpdateSex.Size = new System.Drawing.Size(158, 20);
-            this.textBox_UpdateSex.TabIndex = 12;
-            this.textBox_UpdateSex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox_UpdateAge
-            // 
-            this.textBox_UpdateAge.Location = new System.Drawing.Point(111, 355);
-            this.textBox_UpdateAge.Name = "textBox_UpdateAge";
-            this.textBox_UpdateAge.Size = new System.Drawing.Size(158, 20);
-            this.textBox_UpdateAge.TabIndex = 13;
-            this.textBox_UpdateAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox_UpdateTown
-            // 
-            this.textBox_UpdateTown.Location = new System.Drawing.Point(111, 381);
-            this.textBox_UpdateTown.Name = "textBox_UpdateTown";
-            this.textBox_UpdateTown.Size = new System.Drawing.Size(158, 20);
-            this.textBox_UpdateTown.TabIndex = 14;
-            this.textBox_UpdateTown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox_UpdatePasportSeries
-            // 
-            this.textBox_UpdatePasportSeries.Location = new System.Drawing.Point(111, 407);
-            this.textBox_UpdatePasportSeries.Name = "textBox_UpdatePasportSeries";
-            this.textBox_UpdatePasportSeries.Size = new System.Drawing.Size(158, 20);
-            this.textBox_UpdatePasportSeries.TabIndex = 15;
-            this.textBox_UpdatePasportSeries.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox_UpdatePasportNumber
-            // 
-            this.textBox_UpdatePasportNumber.Location = new System.Drawing.Point(111, 433);
-            this.textBox_UpdatePasportNumber.Name = "textBox_UpdatePasportNumber";
-            this.textBox_UpdatePasportNumber.Size = new System.Drawing.Size(158, 20);
-            this.textBox_UpdatePasportNumber.TabIndex = 16;
-            this.textBox_UpdatePasportNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Dormytory
             // 
