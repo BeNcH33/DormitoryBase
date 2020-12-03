@@ -17,7 +17,7 @@ namespace Dormitory
         SqlConnection sqlConnection;
         SqlDataAdapter sqlDataAdapter;
         SqlCommandBuilder sqlBuilder;
-        DataSet dataSet;
+        DataSet dataSet=new DataSet();
         public Dormytory()
         {
             InitializeComponent();
@@ -38,15 +38,15 @@ namespace Dormitory
 
                 sqlBuilder = new SqlCommandBuilder(sqlDataAdapter);
 
-                DataSet dataSet = new DataSet();
+                
                 sqlDataAdapter.Fill(dataSet, "Table_Student");
                 dataGridView1.DataSource = dataSet.Tables["Table_Student"];
-            }
+        }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+}
         private void ReloadDate()   
         {
             try
@@ -54,18 +54,12 @@ namespace Dormitory
                 dataSet.Tables["Table_Student"].Clear();
                 sqlDataAdapter.Fill(dataSet, "Table_Student");
                 dataGridView1.DataSource = dataSet.Tables["Table_Student"];
-
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                {
-                    DataGridViewLinkCell linkcell = new DataGridViewLinkCell();
-                    dataGridView1[9, i] = linkcell;
-                }
-            }
-            catch (Exception ex)
+        }
+               catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+}
 
         private void button_LoadPicture_Click(object sender, EventArgs e)
         {
@@ -101,7 +95,7 @@ namespace Dormitory
             textBox_UpdateTown.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
             textBox_UpdatePasportSeries.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
             textBox_UpdatePasportNumber.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-            //pictureBox1.Image= Image.FromFile(dataGridView1.Item(1, 1).Value)
+            
 
             panel_InfoStudent.Visible = true;
         }
@@ -124,6 +118,7 @@ namespace Dormitory
             cmd.Parameters.AddWithValue("PasportNumber", textBox_AddPasportNumber.Text);
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
+            ReloadDate();
         }
 
         private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -131,6 +126,35 @@ namespace Dormitory
             SqlCommand cmd = new SqlCommand("DELETE FROM Table_Student WHERE ID_student=" + Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value)+";",sqlConnection);
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
+            ReloadDate();
+        }
+
+        private void LoadViolationDate()
+        {
+            try
+            {
+                sqlDataAdapter = new SqlDataAdapter("SELECT * FROM Table_Violation", sqlConnection);
+
+                sqlBuilder = new SqlCommandBuilder(sqlDataAdapter);
+
+                DataSet dataSet = new DataSet();
+                sqlDataAdapter.Fill(dataSet, "Table_Violation");
+                dataGridView_InfoViolation.DataSource = dataSet.Tables["Table_Violation"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button_LoadViolation_Click(object sender, EventArgs e)
+        {
+            LoadViolationDate();
+        }
+
+        private void button_AddViolation_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("INSERT INTO Table_InfViolation (InfoViolation, TakeAction) VALUES (@)", sqlConnection);
         }
     }
 }
