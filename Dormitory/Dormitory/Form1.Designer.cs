@@ -66,6 +66,7 @@
             this.textBox_AddName = new System.Windows.Forms.TextBox();
             this.textBox_AddFirstName = new System.Windows.Forms.TextBox();
             this.tabPage_AddValiants = new System.Windows.Forms.TabPage();
+            this.tabPage_Rooms = new System.Windows.Forms.TabPage();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.подробнаяИнформацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -107,6 +108,7 @@
             this.tabControl1.Controls.Add(this.tabPage_AllInformation);
             this.tabControl1.Controls.Add(this.tabPage_AddStudent);
             this.tabControl1.Controls.Add(this.tabPage_AddValiants);
+            this.tabControl1.Controls.Add(this.tabPage_Rooms);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 25);
             this.tabControl1.Name = "tabControl1";
@@ -420,6 +422,15 @@
             this.tabPage_AddValiants.Text = "Добавление нарушений";
             this.tabPage_AddValiants.UseVisualStyleBackColor = true;
             // 
+            // tabPage_Rooms
+            // 
+            this.tabPage_Rooms.Location = new System.Drawing.Point(4, 22);
+            this.tabPage_Rooms.Name = "tabPage_Rooms";
+            this.tabPage_Rooms.Size = new System.Drawing.Size(1014, 547);
+            this.tabPage_Rooms.TabIndex = 3;
+            this.tabPage_Rooms.Text = "Комнаты";
+            this.tabPage_Rooms.UseVisualStyleBackColor = true;
+            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -517,6 +528,7 @@
         private System.Windows.Forms.TextBox textBox_UpdatePasportSeries;
         private System.Windows.Forms.TextBox textBox_UpdateTown;
         private System.Windows.Forms.TextBox textBox_UpdatePasportNumber;
+        private System.Windows.Forms.TabPage tabPage_Rooms;
     }
 }
 

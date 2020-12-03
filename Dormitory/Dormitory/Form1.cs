@@ -100,16 +100,25 @@ namespace Dormitory
 
          private void button_Add_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("INSERT INTO Table_Student (FirstName, Name, LastName, Age, Town,PasportSeries, PasportNumber) VALUES (@FirstName, @Name, @LastName, @Age, @Towm, @PasportSeries, @PasportNumber)", sqlConnection);
-            cmd.Parameters.AddWithValue("FirstName", textBox_AddFirstName.Text);
+            //sqlDataAdapter = new SqlDataAdapter("INSERT INTO Table_Student (FirstName, Name, LastName, Age, Town,PasportSeries, PasportNumber) VALUES ('{textBox_AddFirstName.Text}','{textBox_AddName.Text}','{textBox_AddLastName.Text}',{textBox_AddAge.Text},'{textBox_AddTown.Text}',{textBox_AddPasportSeries.Text},{textBox_AddPasportNumber.Text})", sqlConnection);
+
+            //string CommandText = "INSERT INTO [dbo].[Table_Student] ([ID_student], [FirstName], [Name], [LastName], [Sex], [Age], [Town], [PasportSeries], [PasportNumber], [PhotoStudent]) VALUES (N'Bdfyjd  ', N'sodvnmv  ', N'wevwev ', N'М         ', 19, N'Муром     ', 1714, 388520, NULL)";
+            
+
+
+
+
+            SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[Table_Student] ([ID_student], [FirstName], [Name], [LastName], [Sex], [Age], [Town], [PasportSeries], [PasportNumber], [PhotoStudent]) VALUES (N'Bdfyjd  ', N'sodvnmv  ', N'wevwev ', N'М         ', 19, N'Муром     ', 1714, 388520, NULL)", sqlConnection);
+            /*sqlDataAdapter.Parameters.AddWithValue("FirstName", textBox_AddFirstName.Text);
             cmd.Parameters.AddWithValue("Name", textBox_AddName.Text);
             cmd.Parameters.AddWithValue("LastName", textBox_AddLastName.Text);
             cmd.Parameters.AddWithValue("Age", textBox_AddAge.Text);
             cmd.Parameters.AddWithValue("Town", textBox_AddTown.Text);
             cmd.Parameters.AddWithValue("PasportSeries", textBox_AddPasportSeries.Text);
             cmd.Parameters.AddWithValue("PasportNumber", textBox_AddPasportNumber.Text);
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandType = CommandType.Text;*/
             cmd.ExecuteNonQuery();
+            ReloadDate();
         }
 
         private void dataGridView1_MouseUp(object sender, MouseEventArgs e)
