@@ -37,9 +37,6 @@ namespace Dormitory
                 sqlDataAdapter = new SqlDataAdapter("SELECT * FROM Table_Student", sqlConnection);
 
                 sqlBuilder = new SqlCommandBuilder(sqlDataAdapter);
-                //sqlBuilder.GetInsertCommand();
-                sqlBuilder.GetUpdateCommand();
-                sqlBuilder.GetDeleteCommand();
 
                 DataSet dataSet = new DataSet();
                 sqlDataAdapter.Fill(dataSet, "Table_Student");
@@ -61,7 +58,7 @@ namespace Dormitory
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
                     DataGridViewLinkCell linkcell = new DataGridViewLinkCell();
-                    dataGridView1[10, i] = linkcell;
+                    dataGridView1[9, i] = linkcell;
                 }
             }
             catch (Exception ex)
@@ -80,44 +77,8 @@ namespace Dormitory
             }
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void toolStripButton_Reload_Click(object sender, EventArgs e)
         {
-            ReloadDate();
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            /*label7.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            label8.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            label9.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            label10.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            label11.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            label12.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-            label13.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-            label14.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-            panel2.Visible = true;*/
-        }
-
-         private void button_Add_Click(object sender, EventArgs e)
-        {
-            //sqlDataAdapter = new SqlDataAdapter("INSERT INTO Table_Student (FirstName, Name, LastName, Age, Town,PasportSeries, PasportNumber) VALUES ('{textBox_AddFirstName.Text}','{textBox_AddName.Text}','{textBox_AddLastName.Text}',{textBox_AddAge.Text},'{textBox_AddTown.Text}',{textBox_AddPasportSeries.Text},{textBox_AddPasportNumber.Text})", sqlConnection);
-
-            //string CommandText = "INSERT INTO [dbo].[Table_Student] ([ID_student], [FirstName], [Name], [LastName], [Sex], [Age], [Town], [PasportSeries], [PasportNumber], [PhotoStudent]) VALUES (N'Bdfyjd  ', N'sodvnmv  ', N'wevwev ', N'М         ', 19, N'Муром     ', 1714, 388520, NULL)";
-            
-
-
-
-
-            SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[Table_Student] ([ID_student], [FirstName], [Name], [LastName], [Sex], [Age], [Town], [PasportSeries], [PasportNumber], [PhotoStudent]) VALUES (N'Bdfyjd  ', N'sodvnmv  ', N'wevwev ', N'М         ', 19, N'Муром     ', 1714, 388520, NULL)", sqlConnection);
-            /*sqlDataAdapter.Parameters.AddWithValue("FirstName", textBox_AddFirstName.Text);
-            cmd.Parameters.AddWithValue("Name", textBox_AddName.Text);
-            cmd.Parameters.AddWithValue("LastName", textBox_AddLastName.Text);
-            cmd.Parameters.AddWithValue("Age", textBox_AddAge.Text);
-            cmd.Parameters.AddWithValue("Town", textBox_AddTown.Text);
-            cmd.Parameters.AddWithValue("PasportSeries", textBox_AddPasportSeries.Text);
-            cmd.Parameters.AddWithValue("PasportNumber", textBox_AddPasportNumber.Text);
-            cmd.CommandType = CommandType.Text;*/
-            cmd.ExecuteNonQuery();
             ReloadDate();
         }
 
@@ -148,6 +109,28 @@ namespace Dormitory
         private void button_ClosePanel_Click(object sender, EventArgs e)
         {
             panel_InfoStudent.Visible = false;
+        }
+
+        private void button_Add_Click_1(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("INSERT INTO Table_Student (FirstName, Name, LastName, Sex, Age, Town,PasportSeries, PasportNumber) VALUES (@FirstName, @Name, @LastName, @Sex, @Age, @Town, @PasportSeries, @PasportNumber)", sqlConnection);
+            cmd.Parameters.AddWithValue("FirstName", textBox_AddFirstName.Text);
+            cmd.Parameters.AddWithValue("Name", textBox_AddName.Text);
+            cmd.Parameters.AddWithValue("LastName", textBox_AddLastName.Text);
+            cmd.Parameters.AddWithValue("Sex", textBox_AddSex.Text);
+            cmd.Parameters.AddWithValue("Age", textBox_AddAge.Text);
+            cmd.Parameters.AddWithValue("Town", textBox_AddTown.Text);
+            cmd.Parameters.AddWithValue("PasportSeries", textBox_AddPasportSeries.Text);
+            cmd.Parameters.AddWithValue("PasportNumber", textBox_AddPasportNumber.Text);
+            cmd.CommandType = CommandType.Text;
+            cmd.ExecuteNonQuery();
+        }
+
+        private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("DELETE FROM Table_Student WHERE ID_student=" + Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value)+";",sqlConnection);
+            cmd.CommandType = CommandType.Text;
+            cmd.ExecuteNonQuery();
         }
     }
 }

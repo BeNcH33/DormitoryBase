@@ -71,6 +71,8 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.подробнаяИнформацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox_AddSex = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage_AllInformation.SuspendLayout();
@@ -101,7 +103,7 @@
             this.toolStripButton_Reload.Name = "toolStripButton_Reload";
             this.toolStripButton_Reload.Size = new System.Drawing.Size(65, 22);
             this.toolStripButton_Reload.Text = "Обновить";
-            this.toolStripButton_Reload.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.toolStripButton_Reload.Click += new System.EventHandler(this.toolStripButton_Reload_Click);
             // 
             // tabControl1
             // 
@@ -235,7 +237,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1049, 612);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseUp);
             // 
             // tabPage_AddStudent
@@ -272,6 +273,8 @@
             // 
             // panelAddStudent
             // 
+            this.panelAddStudent.Controls.Add(this.textBox_AddSex);
+            this.panelAddStudent.Controls.Add(this.label7);
             this.panelAddStudent.Controls.Add(this.textBox_AddTown);
             this.panelAddStudent.Controls.Add(this.label15);
             this.panelAddStudent.Controls.Add(this.button_Add);
@@ -294,7 +297,7 @@
             // 
             // textBox_AddTown
             // 
-            this.textBox_AddTown.Location = new System.Drawing.Point(197, 245);
+            this.textBox_AddTown.Location = new System.Drawing.Point(197, 279);
             this.textBox_AddTown.Name = "textBox_AddTown";
             this.textBox_AddTown.Size = new System.Drawing.Size(192, 20);
             this.textBox_AddTown.TabIndex = 14;
@@ -302,7 +305,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(45, 248);
+            this.label15.Location = new System.Drawing.Point(45, 279);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(37, 13);
             this.label15.TabIndex = 13;
@@ -310,16 +313,17 @@
             // 
             // button_Add
             // 
-            this.button_Add.Location = new System.Drawing.Point(35, 290);
+            this.button_Add.Location = new System.Drawing.Point(48, 327);
             this.button_Add.Name = "button_Add";
             this.button_Add.Size = new System.Drawing.Size(439, 49);
             this.button_Add.TabIndex = 12;
             this.button_Add.Text = "Добавить";
             this.button_Add.UseVisualStyleBackColor = true;
+            this.button_Add.Click += new System.EventHandler(this.button_Add_Click_1);
             // 
             // textBox_AddPasportNumber
             // 
-            this.textBox_AddPasportNumber.Location = new System.Drawing.Point(197, 204);
+            this.textBox_AddPasportNumber.Location = new System.Drawing.Point(197, 241);
             this.textBox_AddPasportNumber.Name = "textBox_AddPasportNumber";
             this.textBox_AddPasportNumber.Size = new System.Drawing.Size(192, 20);
             this.textBox_AddPasportNumber.TabIndex = 11;
@@ -327,7 +331,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(45, 207);
+            this.label6.Location = new System.Drawing.Point(42, 241);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 13);
             this.label6.TabIndex = 10;
@@ -336,7 +340,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(45, 165);
+            this.label5.Location = new System.Drawing.Point(45, 204);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 13);
             this.label5.TabIndex = 9;
@@ -344,14 +348,14 @@
             // 
             // textBox_AddPasportSeries
             // 
-            this.textBox_AddPasportSeries.Location = new System.Drawing.Point(197, 162);
+            this.textBox_AddPasportSeries.Location = new System.Drawing.Point(197, 204);
             this.textBox_AddPasportSeries.Name = "textBox_AddPasportSeries";
             this.textBox_AddPasportSeries.Size = new System.Drawing.Size(192, 20);
             this.textBox_AddPasportSeries.TabIndex = 8;
             // 
             // textBox_AddAge
             // 
-            this.textBox_AddAge.Location = new System.Drawing.Point(197, 124);
+            this.textBox_AddAge.Location = new System.Drawing.Point(197, 165);
             this.textBox_AddAge.Name = "textBox_AddAge";
             this.textBox_AddAge.Size = new System.Drawing.Size(192, 20);
             this.textBox_AddAge.TabIndex = 7;
@@ -359,7 +363,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(65, 127);
+            this.label4.Location = new System.Drawing.Point(65, 165);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 6;
@@ -441,7 +445,7 @@
             this.подробнаяИнформацияToolStripMenuItem,
             this.удалитьToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(212, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(212, 70);
             // 
             // подробнаяИнформацияToolStripMenuItem
             // 
@@ -455,6 +459,23 @@
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
             this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.удалитьToolStripMenuItem.Text = "Удалить";
+            this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(73, 127);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(27, 13);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Пол";
+            // 
+            // textBox_AddSex
+            // 
+            this.textBox_AddSex.Location = new System.Drawing.Point(197, 127);
+            this.textBox_AddSex.Name = "textBox_AddSex";
+            this.textBox_AddSex.Size = new System.Drawing.Size(192, 20);
+            this.textBox_AddSex.TabIndex = 16;
             // 
             // Dormytory
             // 
@@ -529,6 +550,8 @@
         private System.Windows.Forms.TextBox textBox_UpdateTown;
         private System.Windows.Forms.TextBox textBox_UpdatePasportNumber;
         private System.Windows.Forms.TabPage tabPage_Rooms;
+        private System.Windows.Forms.TextBox textBox_AddSex;
+        private System.Windows.Forms.Label label7;
     }
 }
 
