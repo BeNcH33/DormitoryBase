@@ -35,6 +35,9 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_AllInformation = new System.Windows.Forms.TabPage();
             this.panel_InfoStudent = new System.Windows.Forms.Panel();
+            this.button_NewViolation = new System.Windows.Forms.Button();
+            this.panel_AddViolation = new System.Windows.Forms.Panel();
+            this.comboBox_CategoryViolation = new System.Windows.Forms.ComboBox();
             this.comboBox_UpdateSex = new System.Windows.Forms.ComboBox();
             this.button_ReloadDate = new System.Windows.Forms.Button();
             this.textBox_UpdatePasportNumber = new System.Windows.Forms.TextBox();
@@ -46,7 +49,7 @@
             this.textBox_UpdateFirstName = new System.Windows.Forms.TextBox();
             this.button_ClosePanel = new System.Windows.Forms.Button();
             this.pictureBox_Photo = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView_AllStudents = new System.Windows.Forms.DataGridView();
             this.tabPage_AddStudent = new System.Windows.Forms.TabPage();
             this.label10 = new System.Windows.Forms.Label();
             this.button_LoadPicture = new System.Windows.Forms.Button();
@@ -71,6 +74,8 @@
             this.button_Add = new System.Windows.Forms.Button();
             this.tabPage_AddValiants = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox_AddCategory = new System.Windows.Forms.TextBox();
             this.richTextBox_AddTakeAction = new System.Windows.Forms.RichTextBox();
             this.richTextBox_AddInfo = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -82,17 +87,16 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.подробнаяИнформацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel_AddViolation = new System.Windows.Forms.Panel();
-            this.button_NewViolation = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip_Violation = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.удалитьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_AddNewViolation = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage_AllInformation.SuspendLayout();
             this.panel_InfoStudent.SuspendLayout();
+            this.panel_AddViolation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Photo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_AllStudents)).BeginInit();
             this.tabPage_AddStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AddPhotoStudent)).BeginInit();
             this.panelAddStudent.SuspendLayout();
@@ -100,7 +104,6 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_InfoViolation)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
-            this.panel_AddViolation.SuspendLayout();
             this.contextMenuStrip_Violation.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,12 +139,11 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1022, 573);
             this.tabControl1.TabIndex = 2;
-            this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
             // tabPage_AllInformation
             // 
             this.tabPage_AllInformation.Controls.Add(this.panel_InfoStudent);
-            this.tabPage_AllInformation.Controls.Add(this.dataGridView1);
+            this.tabPage_AllInformation.Controls.Add(this.dataGridView_AllStudents);
             this.tabPage_AllInformation.Location = new System.Drawing.Point(4, 22);
             this.tabPage_AllInformation.Name = "tabPage_AllInformation";
             this.tabPage_AllInformation.Padding = new System.Windows.Forms.Padding(3);
@@ -170,6 +172,34 @@
             this.panel_InfoStudent.Size = new System.Drawing.Size(560, 545);
             this.panel_InfoStudent.TabIndex = 1;
             this.panel_InfoStudent.Visible = false;
+            // 
+            // button_NewViolation
+            // 
+            this.button_NewViolation.Location = new System.Drawing.Point(321, 79);
+            this.button_NewViolation.Name = "button_NewViolation";
+            this.button_NewViolation.Size = new System.Drawing.Size(126, 23);
+            this.button_NewViolation.TabIndex = 20;
+            this.button_NewViolation.Text = "Добавить нарушение";
+            this.button_NewViolation.UseVisualStyleBackColor = true;
+            this.button_NewViolation.Click += new System.EventHandler(this.button_NewViolation_Click);
+            // 
+            // panel_AddViolation
+            // 
+            this.panel_AddViolation.Controls.Add(this.button_AddNewViolation);
+            this.panel_AddViolation.Controls.Add(this.comboBox_CategoryViolation);
+            this.panel_AddViolation.Location = new System.Drawing.Point(295, 108);
+            this.panel_AddViolation.Name = "panel_AddViolation";
+            this.panel_AddViolation.Size = new System.Drawing.Size(224, 50);
+            this.panel_AddViolation.TabIndex = 19;
+            this.panel_AddViolation.Visible = false;
+            // 
+            // comboBox_CategoryViolation
+            // 
+            this.comboBox_CategoryViolation.FormattingEnabled = true;
+            this.comboBox_CategoryViolation.Location = new System.Drawing.Point(0, 14);
+            this.comboBox_CategoryViolation.Name = "comboBox_CategoryViolation";
+            this.comboBox_CategoryViolation.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_CategoryViolation.TabIndex = 0;
             // 
             // comboBox_UpdateSex
             // 
@@ -266,17 +296,17 @@
             this.pictureBox_Photo.TabIndex = 0;
             this.pictureBox_Photo.TabStop = false;
             // 
-            // dataGridView1
+            // dataGridView_AllStudents
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1049, 612);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseUp);
+            this.dataGridView_AllStudents.AllowUserToAddRows = false;
+            this.dataGridView_AllStudents.AllowUserToDeleteRows = false;
+            this.dataGridView_AllStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_AllStudents.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView_AllStudents.Name = "dataGridView_AllStudents";
+            this.dataGridView_AllStudents.ReadOnly = true;
+            this.dataGridView_AllStudents.Size = new System.Drawing.Size(1049, 612);
+            this.dataGridView_AllStudents.TabIndex = 0;
+            this.dataGridView_AllStudents.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseUp);
             // 
             // tabPage_AddStudent
             // 
@@ -506,36 +536,54 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.textBox_AddCategory);
             this.panel1.Controls.Add(this.richTextBox_AddTakeAction);
             this.panel1.Controls.Add(this.richTextBox_AddInfo);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.button_AddViolation);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Location = new System.Drawing.Point(444, 22);
+            this.panel1.Location = new System.Drawing.Point(540, 30);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(452, 433);
+            this.panel1.Size = new System.Drawing.Size(455, 425);
             this.panel1.TabIndex = 2;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(73, 31);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 13);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Категория";
+            // 
+            // textBox_AddCategory
+            // 
+            this.textBox_AddCategory.Location = new System.Drawing.Point(39, 47);
+            this.textBox_AddCategory.Name = "textBox_AddCategory";
+            this.textBox_AddCategory.Size = new System.Drawing.Size(130, 20);
+            this.textBox_AddCategory.TabIndex = 9;
             // 
             // richTextBox_AddTakeAction
             // 
-            this.richTextBox_AddTakeAction.Location = new System.Drawing.Point(232, 47);
+            this.richTextBox_AddTakeAction.Location = new System.Drawing.Point(29, 225);
             this.richTextBox_AddTakeAction.Name = "richTextBox_AddTakeAction";
-            this.richTextBox_AddTakeAction.Size = new System.Drawing.Size(152, 137);
+            this.richTextBox_AddTakeAction.Size = new System.Drawing.Size(399, 68);
             this.richTextBox_AddTakeAction.TabIndex = 8;
             this.richTextBox_AddTakeAction.Text = "";
             // 
             // richTextBox_AddInfo
             // 
-            this.richTextBox_AddInfo.Location = new System.Drawing.Point(34, 47);
+            this.richTextBox_AddInfo.Location = new System.Drawing.Point(196, 47);
             this.richTextBox_AddInfo.Name = "richTextBox_AddInfo";
-            this.richTextBox_AddInfo.Size = new System.Drawing.Size(152, 137);
+            this.richTextBox_AddInfo.Size = new System.Drawing.Size(232, 137);
             this.richTextBox_AddInfo.TabIndex = 7;
             this.richTextBox_AddInfo.Text = "";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(267, 31);
+            this.label9.Location = new System.Drawing.Point(178, 209);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(89, 13);
             this.label9.TabIndex = 6;
@@ -543,7 +591,7 @@
             // 
             // button_AddViolation
             // 
-            this.button_AddViolation.Location = new System.Drawing.Point(144, 218);
+            this.button_AddViolation.Location = new System.Drawing.Point(162, 339);
             this.button_AddViolation.Name = "button_AddViolation";
             this.button_AddViolation.Size = new System.Drawing.Size(135, 59);
             this.button_AddViolation.TabIndex = 2;
@@ -554,7 +602,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(46, 31);
+            this.label8.Location = new System.Drawing.Point(237, 31);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(140, 13);
             this.label8.TabIndex = 1;
@@ -568,7 +616,7 @@
             this.dataGridView_InfoViolation.Location = new System.Drawing.Point(8, 30);
             this.dataGridView_InfoViolation.Name = "dataGridView_InfoViolation";
             this.dataGridView_InfoViolation.ReadOnly = true;
-            this.dataGridView_InfoViolation.Size = new System.Drawing.Size(402, 425);
+            this.dataGridView_InfoViolation.Size = new System.Drawing.Size(526, 425);
             this.dataGridView_InfoViolation.TabIndex = 0;
             this.dataGridView_InfoViolation.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_InfoViolation_MouseUp);
             // 
@@ -607,32 +655,6 @@
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
-            // panel_AddViolation
-            // 
-            this.panel_AddViolation.Controls.Add(this.comboBox1);
-            this.panel_AddViolation.Location = new System.Drawing.Point(295, 108);
-            this.panel_AddViolation.Name = "panel_AddViolation";
-            this.panel_AddViolation.Size = new System.Drawing.Size(200, 100);
-            this.panel_AddViolation.TabIndex = 19;
-            this.panel_AddViolation.Visible = false;
-            // 
-            // button_NewViolation
-            // 
-            this.button_NewViolation.Location = new System.Drawing.Point(321, 79);
-            this.button_NewViolation.Name = "button_NewViolation";
-            this.button_NewViolation.Size = new System.Drawing.Size(126, 23);
-            this.button_NewViolation.TabIndex = 20;
-            this.button_NewViolation.Text = "Добавить нарушение";
-            this.button_NewViolation.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(3, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
-            // 
             // contextMenuStrip_Violation
             // 
             this.contextMenuStrip_Violation.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -643,9 +665,19 @@
             // удалитьToolStripMenuItem1
             // 
             this.удалитьToolStripMenuItem1.Name = "удалитьToolStripMenuItem1";
-            this.удалитьToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.удалитьToolStripMenuItem1.Size = new System.Drawing.Size(118, 22);
             this.удалитьToolStripMenuItem1.Text = "Удалить";
             this.удалитьToolStripMenuItem1.Click += new System.EventHandler(this.удалитьToolStripMenuItem1_Click);
+            // 
+            // button_AddNewViolation
+            // 
+            this.button_AddNewViolation.Location = new System.Drawing.Point(141, 14);
+            this.button_AddNewViolation.Name = "button_AddNewViolation";
+            this.button_AddNewViolation.Size = new System.Drawing.Size(80, 23);
+            this.button_AddNewViolation.TabIndex = 21;
+            this.button_AddNewViolation.Text = "Добавить";
+            this.button_AddNewViolation.UseVisualStyleBackColor = true;
+            this.button_AddNewViolation.Click += new System.EventHandler(this.button_AddNewViolation_Click);
             // 
             // Dormytory
             // 
@@ -665,8 +697,9 @@
             this.tabPage_AllInformation.ResumeLayout(false);
             this.panel_InfoStudent.ResumeLayout(false);
             this.panel_InfoStudent.PerformLayout();
+            this.panel_AddViolation.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Photo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_AllStudents)).EndInit();
             this.tabPage_AddStudent.ResumeLayout(false);
             this.tabPage_AddStudent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AddPhotoStudent)).EndInit();
@@ -677,7 +710,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_InfoViolation)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
-            this.panel_AddViolation.ResumeLayout(false);
             this.contextMenuStrip_Violation.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -690,7 +722,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton_Reload;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage_AllInformation;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView_AllStudents;
         private System.Windows.Forms.TabPage tabPage_AddStudent;
         private System.Windows.Forms.TabPage tabPage_AddValiants;
         private System.Windows.Forms.Panel panelAddStudent;
@@ -740,9 +772,12 @@
         private System.Windows.Forms.RichTextBox richTextBox_AddInfo;
         private System.Windows.Forms.Button button_NewViolation;
         private System.Windows.Forms.Panel panel_AddViolation;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox_CategoryViolation;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip_Violation;
         private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox_AddCategory;
+        private System.Windows.Forms.Button button_AddNewViolation;
     }
 }
 

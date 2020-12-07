@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 using System.Data.SqlClient;
 
 namespace Dormitory
@@ -28,6 +27,7 @@ namespace Dormitory
             sqlConnection = new SqlConnection(@"Data Source=BENCH-LAPTOP\SQLEXPRESS;Initial Catalog=Dormitory;Integrated Security=True");
             sqlConnection.Open();
             LoadDate();
+            LoadViolationDate();
         }
         private void LoadDate()
         {
@@ -36,7 +36,7 @@ namespace Dormitory
                 sqlDataAdapter = new SqlDataAdapter("SELECT * FROM Table_Student", sqlConnection);
                 sqlBuilder = new SqlCommandBuilder(sqlDataAdapter);
                 sqlDataAdapter.Fill(dataSet, "Table_Student");
-                dataGridView1.DataSource = dataSet.Tables["Table_Student"];
+                dataGridView_AllStudents.DataSource = dataSet.Tables["Table_Student"];
         }
             catch (Exception ex)
             {
@@ -49,7 +49,7 @@ namespace Dormitory
             {
                 dataSet.Tables["Table_Student"].Clear();
                 sqlDataAdapter.Fill(dataSet, "Table_Student");
-                dataGridView1.DataSource = dataSet.Tables["Table_Student"];
+                dataGridView_AllStudents.DataSource = dataSet.Tables["Table_Student"];
             }
                catch (Exception ex)
             {
@@ -83,21 +83,21 @@ namespace Dormitory
         {
             if (e.Button == MouseButtons.Right)
             {
-                this.contextMenuStrip1.Show(this.dataGridView1, e.Location);
+                this.contextMenuStrip1.Show(this.dataGridView_AllStudents, e.Location);
                 this.contextMenuStrip1.Show(Cursor.Position);
             }
         }
 
         private void подробнаяИнформацияToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            textBox_UpdateFirstName.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            textBox_UpdateName.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            textBox_UpdateLastName.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            comboBox_UpdateSex.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            textBox_UpdateAge.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            textBox_UpdateTown.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-            textBox_UpdatePasportSeries.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-            textBox_UpdatePasportNumber.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+            textBox_UpdateFirstName.Text = dataGridView_AllStudents.CurrentRow.Cells[1].Value.ToString();
+            textBox_UpdateName.Text = dataGridView_AllStudents.CurrentRow.Cells[2].Value.ToString();
+            textBox_UpdateLastName.Text = dataGridView_AllStudents.CurrentRow.Cells[3].Value.ToString();
+            comboBox_UpdateSex.Text = dataGridView_AllStudents.CurrentRow.Cells[4].Value.ToString();
+            textBox_UpdateAge.Text = dataGridView_AllStudents.CurrentRow.Cells[5].Value.ToString();
+            textBox_UpdateTown.Text = dataGridView_AllStudents.CurrentRow.Cells[6].Value.ToString();
+            textBox_UpdatePasportSeries.Text = dataGridView_AllStudents.CurrentRow.Cells[7].Value.ToString();
+            textBox_UpdatePasportNumber.Text = dataGridView_AllStudents.CurrentRow.Cells[8].Value.ToString();
             //pictureBox_Photo.Image = Image.FromFile("@"+dataGridView1.CurrentRow.Cells[9].Value.ToString()+"");
             panel_InfoStudent.Visible = true;
         }
@@ -137,7 +137,7 @@ namespace Dormitory
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("DELETE FROM Table_Student WHERE ID_student=" + Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value) + ";", sqlConnection);
+                SqlCommand cmd = new SqlCommand("DELETE FROM Table_Student WHERE ID_student=" + Convert.ToInt32(dataGridView_AllStudents.CurrentRow.Cells[0].Value) + ";", sqlConnection);
                 cmd.CommandType = CommandType.Text;
                 cmd.ExecuteNonQuery();
                 ReloadDate();
@@ -168,12 +168,14 @@ namespace Dormitory
 
         private void button_AddViolation_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("INSERT INTO Table_InfViolation (InfoViolation, TakeAction) VALUES (@InfoViolation, @TakeAction)", sqlConnection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Table_InfViolation (InfoViolation, TakeAction, CategioryViolation) VALUES (@InfoViolation, @TakeAction, @CategioryViolation)", sqlConnection);
             cmd.Parameters.AddWithValue("InfoViolation", richTextBox_AddInfo.Text);
             cmd.Parameters.AddWithValue("TakeAction", richTextBox_AddTakeAction.Text);
+            cmd.Parameters.AddWithValue("CategioryViolation", textBox_AddCategory.Text);
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
-            ReloadDateViolation();
+            //ReloadDateViolation();
+            textBox_AddCategory.Clear();
             richTextBox_AddInfo.Clear();
             richTextBox_AddTakeAction.Clear();
         }
@@ -205,7 +207,7 @@ namespace Dormitory
                 cmd.Parameters.AddWithValue("Town", textBox_UpdateTown.Text);
                 cmd.Parameters.AddWithValue("PasportSeries", textBox_UpdatePasportSeries.Text);
                 cmd.Parameters.AddWithValue("PasportNumber", textBox_UpdatePasportNumber.Text);
-                cmd.Parameters.AddWithValue("id", dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                cmd.Parameters.AddWithValue("id", dataGridView_AllStudents.CurrentRow.Cells[0].Value.ToString());
                 //label10.Text = LocationPhoto;
                 //cmd.Parameters.AddWithValue("PhotoStudent", LocationPhoto);
                 cmd.CommandType = CommandType.Text;
@@ -217,12 +219,6 @@ namespace Dormitory
                 MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void tabControl1_Click(object sender, EventArgs e)
-        {
-            LoadViolationDate();
-        }
-
         private void удалитьToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             try
@@ -244,6 +240,44 @@ namespace Dormitory
             {
                 this.contextMenuStrip_Violation.Show(this.dataGridView_InfoViolation, e.Location);
                 this.contextMenuStrip_Violation.Show(Cursor.Position);
+            }
+        }
+
+        private void button_NewViolation_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT DISTINCT CategioryViolation FROM Table_InfViolation", sqlConnection);
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader reader = cmd.ExecuteReader();
+            List<string> listBox = new List<string>();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    listBox.Add(reader.GetValue(0).ToString());
+                }
+            }
+            for(int i = 0; i < listBox.Count; i++)
+            {
+                comboBox_CategoryViolation.Items.Add(listBox[i]);
+            }
+            panel_AddViolation.Visible = true;
+            reader.Close();
+        }
+
+        private void button_AddNewViolation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("INSERT INTO Table_Violation (ID_Student, CategoryViolation) VALUES (@ID_Student, @CategoryViolation)", sqlConnection);
+                cmd.Parameters.AddWithValue("ID_Student", Convert.ToInt32(dataGridView_AllStudents.CurrentRow.Cells[0].Value));
+                cmd.Parameters.AddWithValue("CategoryViolation", comboBox_CategoryViolation.Text);
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
+                panel_AddViolation.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
