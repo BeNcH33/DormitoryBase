@@ -32,6 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dormytory));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_AllInformation = new System.Windows.Forms.TabPage();
+            this.button_Hide = new System.Windows.Forms.Button();
+            this.button_InfoValiant = new System.Windows.Forms.Button();
+            this.panel_Violation = new System.Windows.Forms.Panel();
+            this.dataGridView_Violation = new System.Windows.Forms.DataGridView();
             this.panel_InfoStudent = new System.Windows.Forms.Panel();
             this.button_NewViolation = new System.Windows.Forms.Button();
             this.panel_AddViolation = new System.Windows.Forms.Panel();
@@ -102,14 +106,19 @@
             this.contextMenuStrip_Room = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.удалитьToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.изменитьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.button_InfoValiant = new System.Windows.Forms.Button();
-            this.panel_Violation = new System.Windows.Forms.Panel();
-            this.dataGridView_Violation = new System.Windows.Forms.DataGridView();
-            this.button_Hide = new System.Windows.Forms.Button();
             this.contextMenuStrip_AllViolation = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel_UpdateViolation = new System.Windows.Forms.Panel();
+            this.button_UpdateViolation = new System.Windows.Forms.Button();
+            this.textBox_UpdadeStudentViolation = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.comboBox_ViolationUpdate = new System.Windows.Forms.ComboBox();
+            this.удалитьToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage_AllInformation.SuspendLayout();
+            this.panel_Violation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Violation)).BeginInit();
             this.panel_InfoStudent.SuspendLayout();
             this.panel_AddViolation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Photo)).BeginInit();
@@ -125,9 +134,8 @@
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip_Violation.SuspendLayout();
             this.contextMenuStrip_Room.SuspendLayout();
-            this.panel_Violation.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Violation)).BeginInit();
             this.contextMenuStrip_AllViolation.SuspendLayout();
+            this.panel_UpdateViolation.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -140,11 +148,12 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1418, 598);
+            this.tabControl1.Size = new System.Drawing.Size(1316, 598);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage_AllInformation
             // 
+            this.tabPage_AllInformation.Controls.Add(this.panel_UpdateViolation);
             this.tabPage_AllInformation.Controls.Add(this.button_Hide);
             this.tabPage_AllInformation.Controls.Add(this.button_InfoValiant);
             this.tabPage_AllInformation.Controls.Add(this.panel_Violation);
@@ -153,10 +162,52 @@
             this.tabPage_AllInformation.Location = new System.Drawing.Point(4, 22);
             this.tabPage_AllInformation.Name = "tabPage_AllInformation";
             this.tabPage_AllInformation.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_AllInformation.Size = new System.Drawing.Size(1410, 572);
+            this.tabPage_AllInformation.Size = new System.Drawing.Size(1308, 572);
             this.tabPage_AllInformation.TabIndex = 0;
             this.tabPage_AllInformation.Text = "Общие данные";
             this.tabPage_AllInformation.UseVisualStyleBackColor = true;
+            // 
+            // button_Hide
+            // 
+            this.button_Hide.Location = new System.Drawing.Point(1213, 3);
+            this.button_Hide.Name = "button_Hide";
+            this.button_Hide.Size = new System.Drawing.Size(89, 23);
+            this.button_Hide.TabIndex = 4;
+            this.button_Hide.Text = "Скрыть";
+            this.button_Hide.UseVisualStyleBackColor = true;
+            this.button_Hide.Visible = false;
+            this.button_Hide.Click += new System.EventHandler(this.button_Hide_Click);
+            // 
+            // button_InfoValiant
+            // 
+            this.button_InfoValiant.Location = new System.Drawing.Point(1058, 3);
+            this.button_InfoValiant.Name = "button_InfoValiant";
+            this.button_InfoValiant.Size = new System.Drawing.Size(149, 23);
+            this.button_InfoValiant.TabIndex = 2;
+            this.button_InfoValiant.Text = "Просмотреть нарушения";
+            this.button_InfoValiant.UseVisualStyleBackColor = true;
+            this.button_InfoValiant.Click += new System.EventHandler(this.button_InfoValiant_Click);
+            // 
+            // panel_Violation
+            // 
+            this.panel_Violation.Controls.Add(this.dataGridView_Violation);
+            this.panel_Violation.Location = new System.Drawing.Point(1058, 32);
+            this.panel_Violation.Name = "panel_Violation";
+            this.panel_Violation.Size = new System.Drawing.Size(247, 217);
+            this.panel_Violation.TabIndex = 3;
+            this.panel_Violation.Visible = false;
+            // 
+            // dataGridView_Violation
+            // 
+            this.dataGridView_Violation.AllowUserToAddRows = false;
+            this.dataGridView_Violation.AllowUserToDeleteRows = false;
+            this.dataGridView_Violation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Violation.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView_Violation.Name = "dataGridView_Violation";
+            this.dataGridView_Violation.ReadOnly = true;
+            this.dataGridView_Violation.Size = new System.Drawing.Size(241, 215);
+            this.dataGridView_Violation.TabIndex = 4;
+            this.dataGridView_Violation.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView_Violation_MouseUp);
             // 
             // panel_InfoStudent
             // 
@@ -334,7 +385,7 @@
             this.tabPage_AddStudent.Location = new System.Drawing.Point(4, 22);
             this.tabPage_AddStudent.Name = "tabPage_AddStudent";
             this.tabPage_AddStudent.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_AddStudent.Size = new System.Drawing.Size(1014, 547);
+            this.tabPage_AddStudent.Size = new System.Drawing.Size(1410, 572);
             this.tabPage_AddStudent.TabIndex = 1;
             this.tabPage_AddStudent.Text = "Добавление студента";
             this.tabPage_AddStudent.UseVisualStyleBackColor = true;
@@ -545,7 +596,7 @@
             this.tabPage_AddValiants.Controls.Add(this.dataGridView_InfoViolation);
             this.tabPage_AddValiants.Location = new System.Drawing.Point(4, 22);
             this.tabPage_AddValiants.Name = "tabPage_AddValiants";
-            this.tabPage_AddValiants.Size = new System.Drawing.Size(1014, 547);
+            this.tabPage_AddValiants.Size = new System.Drawing.Size(1308, 572);
             this.tabPage_AddValiants.TabIndex = 2;
             this.tabPage_AddValiants.Text = "Добавление нарушений";
             this.tabPage_AddValiants.UseVisualStyleBackColor = true;
@@ -650,7 +701,7 @@
             this.tabPage_Rooms.Controls.Add(this.dataGridView_InfoRoom);
             this.tabPage_Rooms.Location = new System.Drawing.Point(4, 22);
             this.tabPage_Rooms.Name = "tabPage_Rooms";
-            this.tabPage_Rooms.Size = new System.Drawing.Size(1014, 547);
+            this.tabPage_Rooms.Size = new System.Drawing.Size(1308, 572);
             this.tabPage_Rooms.TabIndex = 3;
             this.tabPage_Rooms.Text = "Комнаты";
             this.tabPage_Rooms.UseVisualStyleBackColor = true;
@@ -811,62 +862,89 @@
             this.изменитьToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
             this.изменитьToolStripMenuItem1.Text = "Изменить";
             // 
-            // button_InfoValiant
-            // 
-            this.button_InfoValiant.Location = new System.Drawing.Point(1058, 3);
-            this.button_InfoValiant.Name = "button_InfoValiant";
-            this.button_InfoValiant.Size = new System.Drawing.Size(149, 23);
-            this.button_InfoValiant.TabIndex = 2;
-            this.button_InfoValiant.Text = "Просмотреть нарушения";
-            this.button_InfoValiant.UseVisualStyleBackColor = true;
-            this.button_InfoValiant.Click += new System.EventHandler(this.button_InfoValiant_Click);
-            // 
-            // panel_Violation
-            // 
-            this.panel_Violation.Controls.Add(this.dataGridView_Violation);
-            this.panel_Violation.Location = new System.Drawing.Point(1058, 32);
-            this.panel_Violation.Name = "panel_Violation";
-            this.panel_Violation.Size = new System.Drawing.Size(329, 257);
-            this.panel_Violation.TabIndex = 3;
-            this.panel_Violation.Visible = false;
-            // 
-            // dataGridView_Violation
-            // 
-            this.dataGridView_Violation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Violation.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView_Violation.Name = "dataGridView_Violation";
-            this.dataGridView_Violation.Size = new System.Drawing.Size(220, 215);
-            this.dataGridView_Violation.TabIndex = 4;
-            // 
-            // button_Hide
-            // 
-            this.button_Hide.Location = new System.Drawing.Point(1213, 3);
-            this.button_Hide.Name = "button_Hide";
-            this.button_Hide.Size = new System.Drawing.Size(94, 23);
-            this.button_Hide.TabIndex = 4;
-            this.button_Hide.Text = "Скрыть";
-            this.button_Hide.UseVisualStyleBackColor = true;
-            this.button_Hide.Click += new System.EventHandler(this.button_Hide_Click);
-            // 
             // contextMenuStrip_AllViolation
             // 
             this.contextMenuStrip_AllViolation.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
+            this.toolStripMenuItem1,
+            this.удалитьToolStripMenuItem3});
             this.contextMenuStrip_AllViolation.Name = "contextMenuStrip_AllViolation";
-            this.contextMenuStrip_AllViolation.Size = new System.Drawing.Size(181, 48);
+            this.contextMenuStrip_AllViolation.Size = new System.Drawing.Size(129, 48);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
             this.toolStripMenuItem1.Text = "Изменить";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // panel_UpdateViolation
+            // 
+            this.panel_UpdateViolation.Controls.Add(this.comboBox_ViolationUpdate);
+            this.panel_UpdateViolation.Controls.Add(this.label18);
+            this.panel_UpdateViolation.Controls.Add(this.label17);
+            this.panel_UpdateViolation.Controls.Add(this.textBox_UpdadeStudentViolation);
+            this.panel_UpdateViolation.Controls.Add(this.button_UpdateViolation);
+            this.panel_UpdateViolation.Location = new System.Drawing.Point(1061, 256);
+            this.panel_UpdateViolation.Name = "panel_UpdateViolation";
+            this.panel_UpdateViolation.Size = new System.Drawing.Size(215, 100);
+            this.panel_UpdateViolation.TabIndex = 5;
+            this.panel_UpdateViolation.Visible = false;
+            // 
+            // button_UpdateViolation
+            // 
+            this.button_UpdateViolation.Location = new System.Drawing.Point(137, 65);
+            this.button_UpdateViolation.Name = "button_UpdateViolation";
+            this.button_UpdateViolation.Size = new System.Drawing.Size(75, 23);
+            this.button_UpdateViolation.TabIndex = 0;
+            this.button_UpdateViolation.Text = "Изменить";
+            this.button_UpdateViolation.UseVisualStyleBackColor = true;
+            this.button_UpdateViolation.Click += new System.EventHandler(this.button_UpdateViolation_Click);
+            // 
+            // textBox_UpdadeStudentViolation
+            // 
+            this.textBox_UpdadeStudentViolation.Location = new System.Drawing.Point(4, 4);
+            this.textBox_UpdadeStudentViolation.Name = "textBox_UpdadeStudentViolation";
+            this.textBox_UpdadeStudentViolation.Size = new System.Drawing.Size(100, 20);
+            this.textBox_UpdadeStudentViolation.TabIndex = 1;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(110, 7);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(64, 13);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "Id студента";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(110, 33);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(64, 13);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "Нарушение";
+            // 
+            // comboBox_ViolationUpdate
+            // 
+            this.comboBox_ViolationUpdate.FormattingEnabled = true;
+            this.comboBox_ViolationUpdate.Location = new System.Drawing.Point(4, 30);
+            this.comboBox_ViolationUpdate.Name = "comboBox_ViolationUpdate";
+            this.comboBox_ViolationUpdate.Size = new System.Drawing.Size(100, 21);
+            this.comboBox_ViolationUpdate.TabIndex = 4;
+            // 
+            // удалитьToolStripMenuItem3
+            // 
+            this.удалитьToolStripMenuItem3.Name = "удалитьToolStripMenuItem3";
+            this.удалитьToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.удалитьToolStripMenuItem3.Text = "Удалить";
+            this.удалитьToolStripMenuItem3.Click += new System.EventHandler(this.удалитьToolStripMenuItem3_Click);
             // 
             // Dormytory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1418, 598);
+            this.ClientSize = new System.Drawing.Size(1316, 598);
             this.Controls.Add(this.tabControl1);
             this.Name = "Dormytory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -875,6 +953,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage_AllInformation.ResumeLayout(false);
+            this.panel_Violation.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Violation)).EndInit();
             this.panel_InfoStudent.ResumeLayout(false);
             this.panel_InfoStudent.PerformLayout();
             this.panel_AddViolation.ResumeLayout(false);
@@ -895,9 +975,9 @@
             this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuStrip_Violation.ResumeLayout(false);
             this.contextMenuStrip_Room.ResumeLayout(false);
-            this.panel_Violation.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Violation)).EndInit();
             this.contextMenuStrip_AllViolation.ResumeLayout(false);
+            this.panel_UpdateViolation.ResumeLayout(false);
+            this.panel_UpdateViolation.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -981,6 +1061,13 @@
         private System.Windows.Forms.Button button_Hide;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip_AllViolation;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.Panel panel_UpdateViolation;
+        private System.Windows.Forms.TextBox textBox_UpdadeStudentViolation;
+        private System.Windows.Forms.Button button_UpdateViolation;
+        private System.Windows.Forms.ComboBox comboBox_ViolationUpdate;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem3;
     }
 }
 

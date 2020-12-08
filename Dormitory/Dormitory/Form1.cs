@@ -43,12 +43,12 @@ namespace Dormitory
             {
                 MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-}
+        }
         private void ReloadDate()   
         {
             try
             {
-                dataSet.Tables["Table_Student"].Clear();
+                //dataSet.Tables["Table_Student"].Clear();
                 sqlDataAdapter.Fill(dataSet, "Table_Student");
                 dataGridView_AllStudents.DataSource = dataSet.Tables["Table_Student"];
             }
@@ -56,7 +56,7 @@ namespace Dormitory
             {
                 MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-}
+        }
 
         private void button_LoadPicture_Click(object sender, EventArgs e)
         {
@@ -121,6 +121,15 @@ namespace Dormitory
                 cmd.CommandType = CommandType.Text;
                 cmd.ExecuteNonQuery();
                 ReloadDate();
+
+                textBox_AddFirstName.Clear();
+                textBox_AddName.Clear();
+                textBox_AddLastName.Clear();
+                textBox_AddAge.Clear();
+                textBox_AddTown.Clear();
+                textBox_AddPasportSeries.Clear();
+                textBox_AddPasportNumber.Clear();
+
             }
             catch (Exception ex)
             {
@@ -169,7 +178,7 @@ namespace Dormitory
             cmd.Parameters.AddWithValue("CategioryViolation", textBox_AddCategory.Text);
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
-            //ReloadDateViolation();
+            ReloadDateViolation();
             textBox_AddCategory.Clear();
             richTextBox_AddInfo.Clear();
             richTextBox_AddTakeAction.Clear();
@@ -178,7 +187,6 @@ namespace Dormitory
         {
             try
             {
-                dataSet.Tables["Table_InfViolation"].Clear();
                 sqlDataAdapter.Fill(dataSet, "Table_InfViolation");
                 dataGridView_InfoViolation.DataSource = dataSet.Tables["Table_InfViolation"];
             }
@@ -305,6 +313,12 @@ namespace Dormitory
                 cmd.CommandType = CommandType.Text;
                 cmd.ExecuteNonQuery();
                 panel_AddViolation.Visible = false;
+
+                textBox_AddNumberRoom.Clear();
+                textBox_AddNumberFloor.Clear();
+                textBox_AddNumberSeats.Clear();
+                textBox_AddCost.Clear();
+                ReloadInfoRoom();
             }
             catch (Exception ex)
             {
@@ -334,6 +348,7 @@ namespace Dormitory
         {
             LoadViolation();
             panel_Violation.Visible = true;
+            button_Hide.Visible = true;
         }
 
         private void button_Hide_Click(object sender, EventArgs e)
@@ -343,12 +358,100 @@ namespace Dormitory
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            textBox_UpdadeStudentViolation.Text = dataGridView_Violation.CurrentRow.Cells[0].Value.ToString();
 
+            SqlCommand cmd = new SqlCommand("SELECT DISTINCT CategioryViolation FROM Table_InfViolation", sqlConnection);
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader reader = cmd.ExecuteReader();
+            List<string> listBox = new List<string>();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    listBox.Add(reader.GetValue(0).ToString());
+                }
+            }
+            for (int i = 0; i < listBox.Count; i++)
+            {
+                comboBox_ViolationUpdate.Items.Add(listBox[i]);
+            }
+            listBox.Clear();
+            panel_AddViolation.Visible = true;
+            reader.Close();
+
+
+
+            panel_UpdateViolation.Visible = true;
         }
 
-        //private void обновитьToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    ReloadDate();
-        //}
+        private void dataGridView_Violation_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                this.contextMenuStrip_AllViolation.Show(this.dataGridView_AllStudents, e.Location);
+                this.contextMenuStrip_AllViolation.Show(Cursor.Position);
+            }
+        }
+
+        private void button_UpdateViolation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("UPDATE Table_Violation SET ID_Student=@ID_Student, CategoryViolation=@CategoryViolation  WHERE ID_student=@id", sqlConnection);
+                cmd.Parameters.AddWithValue("ID_Student", textBox_UpdadeStudentViolation.Text);
+                cmd.Parameters.AddWithValue("CategoryViolation", comboBox_ViolationUpdate.Text);
+                cmd.Parameters.AddWithValue("id", dataGridView_Violation.CurrentRow.Cells[0].Value.ToString());
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
+
+                ReloadViolationStudent(); 
+                panel_UpdateViolation.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ReloadViolationStudent()
+        {
+            try
+            {
+                sqlDataAdapter.Fill(dataSet, "Table_Violation");
+                dataGridView_Violation.DataSource = dataSet.Tables["Table_Violation"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void удалитьToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("DELETE FROM Table_Violation WHERE ID_Student=" + Convert.ToInt32(dataGridView_Violation.CurrentRow.Cells[0].Value) + ";", sqlConnection);
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
+                ReloadViolationStudent();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ReloadInfoRoom()
+        {
+            try
+            {
+                sqlDataAdapter.Fill(dataSet, "Table_Room");
+                dataGridView_InfoRoom.DataSource = dataSet.Tables["Table_Room"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
