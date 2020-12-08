@@ -29,6 +29,7 @@ namespace Dormitory
             LoadDate();
             LoadViolationDate();
             LoadRoomDate();
+            LoadSpace();
         }
         private void LoadDate()
         {
@@ -142,8 +143,11 @@ namespace Dormitory
             try
             {
                 SqlCommand cmd = new SqlCommand("DELETE FROM Table_Student WHERE ID_student=" + Convert.ToInt32(dataGridView_AllStudents.CurrentRow.Cells[0].Value) + ";", sqlConnection);
+                SqlCommand cmd1 = new SqlCommand("DELETE FROM Table_Violation WHERE ID_student=" + Convert.ToInt32(dataGridView_AllStudents.CurrentRow.Cells[0].Value) + ";", sqlConnection);
                 cmd.CommandType = CommandType.Text;
                 cmd.ExecuteNonQuery();
+                cmd1.CommandType = CommandType.Text;
+                cmd1.ExecuteNonQuery();
                 ReloadDate();
             }
             catch (Exception ex)
@@ -349,11 +353,13 @@ namespace Dormitory
             LoadViolation();
             panel_Violation.Visible = true;
             button_Hide.Visible = true;
+            button_Clear.Visible = false;
         }
 
         private void button_Hide_Click(object sender, EventArgs e)
         {
             panel_Violation.Visible = false;
+            button_Clear.Visible = true;
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -452,6 +458,80 @@ namespace Dormitory
             {
                 MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void удалитьToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("DELETE FROM Table_Room WHERE NumberRoom=" + Convert.ToInt32(dataGridView_InfoRoom.CurrentRow.Cells[0].Value) + ";", sqlConnection);
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
+                ReloadInfoRoom();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadSpace()
+        {
+            try
+            {
+                sqlDataAdapter = new SqlDataAdapter("SELECT * FROM Table_Space", sqlConnection);
+                sqlBuilder = new SqlCommandBuilder(sqlDataAdapter);
+                DataSet dataSet = new DataSet();
+                sqlDataAdapter.Fill(dataSet, "Table_Space");
+                dataGridView_Space.DataSource = dataSet.Tables["Table_Space"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button_AddSpace_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("INSERT INTO Table_Space (NameSpace, FloorSpace) VALUES (@NameSpace, @FloorSpace)", sqlConnection);
+                cmd.Parameters.AddWithValue("NameSpace", textBox_AddSpaceName.Text);
+                cmd.Parameters.AddWithValue("FloorSpace", textBox_AddSpaceFloor.Text);
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
+                panel_AddViolation.Visible = false;
+
+                textBox_AddSpaceName.Clear();
+                textBox_AddSpaceFloor.Clear();
+                ReloadInfoSpace();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void ReloadInfoSpace()
+        {
+            try
+            {
+                sqlDataAdapter.Fill(dataSet, "Table_Space");
+                dataGridView_InfoRoom.DataSource = dataSet.Tables["Table_Space"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button_Exit_Click(object sender, EventArgs e)
+        {
+            panel_clear.Visible = false;
+        }
+
+        private void button_Clear_Click(object sender, EventArgs e)
+        {
+            panel_clear.Visible = true;
         }
     }
 }

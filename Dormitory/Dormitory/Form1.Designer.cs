@@ -115,6 +115,17 @@
             this.label18 = new System.Windows.Forms.Label();
             this.comboBox_ViolationUpdate = new System.Windows.Forms.ComboBox();
             this.удалитьToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_Clear = new System.Windows.Forms.Button();
+            this.panel_clear = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridView_Space = new System.Windows.Forms.DataGridView();
+            this.textBox_AddSpaceName = new System.Windows.Forms.TextBox();
+            this.textBox_AddSpaceFloor = new System.Windows.Forms.TextBox();
+            this.button_AddSpace = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.button_Exit = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage_AllInformation.SuspendLayout();
             this.panel_Violation.SuspendLayout();
@@ -136,6 +147,10 @@
             this.contextMenuStrip_Room.SuspendLayout();
             this.contextMenuStrip_AllViolation.SuspendLayout();
             this.panel_UpdateViolation.SuspendLayout();
+            this.panel_clear.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Space)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -144,6 +159,7 @@
             this.tabControl1.Controls.Add(this.tabPage_AddStudent);
             this.tabControl1.Controls.Add(this.tabPage_AddValiants);
             this.tabControl1.Controls.Add(this.tabPage_Rooms);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -153,6 +169,8 @@
             // 
             // tabPage_AllInformation
             // 
+            this.tabPage_AllInformation.Controls.Add(this.panel_clear);
+            this.tabPage_AllInformation.Controls.Add(this.button_Clear);
             this.tabPage_AllInformation.Controls.Add(this.panel_UpdateViolation);
             this.tabPage_AllInformation.Controls.Add(this.button_Hide);
             this.tabPage_AllInformation.Controls.Add(this.button_InfoValiant);
@@ -191,7 +209,7 @@
             // panel_Violation
             // 
             this.panel_Violation.Controls.Add(this.dataGridView_Violation);
-            this.panel_Violation.Location = new System.Drawing.Point(1058, 32);
+            this.panel_Violation.Location = new System.Drawing.Point(1058, 34);
             this.panel_Violation.Name = "panel_Violation";
             this.panel_Violation.Size = new System.Drawing.Size(247, 217);
             this.panel_Violation.TabIndex = 3;
@@ -385,7 +403,7 @@
             this.tabPage_AddStudent.Location = new System.Drawing.Point(4, 22);
             this.tabPage_AddStudent.Name = "tabPage_AddStudent";
             this.tabPage_AddStudent.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_AddStudent.Size = new System.Drawing.Size(1410, 572);
+            this.tabPage_AddStudent.Size = new System.Drawing.Size(1308, 572);
             this.tabPage_AddStudent.TabIndex = 1;
             this.tabPage_AddStudent.Text = "Добавление студента";
             this.tabPage_AddStudent.UseVisualStyleBackColor = true;
@@ -855,6 +873,7 @@
             this.удалитьToolStripMenuItem2.Name = "удалитьToolStripMenuItem2";
             this.удалитьToolStripMenuItem2.Size = new System.Drawing.Size(128, 22);
             this.удалитьToolStripMenuItem2.Text = "Удалить";
+            this.удалитьToolStripMenuItem2.Click += new System.EventHandler(this.удалитьToolStripMenuItem2_Click);
             // 
             // изменитьToolStripMenuItem1
             // 
@@ -936,9 +955,120 @@
             // удалитьToolStripMenuItem3
             // 
             this.удалитьToolStripMenuItem3.Name = "удалитьToolStripMenuItem3";
-            this.удалитьToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.удалитьToolStripMenuItem3.Size = new System.Drawing.Size(128, 22);
             this.удалитьToolStripMenuItem3.Text = "Удалить";
             this.удалитьToolStripMenuItem3.Click += new System.EventHandler(this.удалитьToolStripMenuItem3_Click);
+            // 
+            // button_Clear
+            // 
+            this.button_Clear.Location = new System.Drawing.Point(1058, 34);
+            this.button_Clear.Name = "button_Clear";
+            this.button_Clear.Size = new System.Drawing.Size(242, 23);
+            this.button_Clear.TabIndex = 6;
+            this.button_Clear.Text = "Просмотреть график уборок";
+            this.button_Clear.UseVisualStyleBackColor = true;
+            this.button_Clear.Click += new System.EventHandler(this.button_Clear_Click);
+            // 
+            // panel_clear
+            // 
+            this.panel_clear.Controls.Add(this.button_Exit);
+            this.panel_clear.Controls.Add(this.dataGridView1);
+            this.panel_clear.Location = new System.Drawing.Point(922, 63);
+            this.panel_clear.Name = "panel_clear";
+            this.panel_clear.Size = new System.Drawing.Size(380, 367);
+            this.panel_clear.TabIndex = 6;
+            this.panel_clear.Visible = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(4, 4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(257, 267);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.label20);
+            this.tabPage1.Controls.Add(this.label19);
+            this.tabPage1.Controls.Add(this.button_AddSpace);
+            this.tabPage1.Controls.Add(this.textBox_AddSpaceFloor);
+            this.tabPage1.Controls.Add(this.textBox_AddSpaceName);
+            this.tabPage1.Controls.Add(this.dataGridView_Space);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(1308, 572);
+            this.tabPage1.TabIndex = 4;
+            this.tabPage1.Text = "Помещения";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView_Space
+            // 
+            this.dataGridView_Space.AllowUserToAddRows = false;
+            this.dataGridView_Space.AllowUserToDeleteRows = false;
+            this.dataGridView_Space.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Space.Location = new System.Drawing.Point(9, 4);
+            this.dataGridView_Space.Name = "dataGridView_Space";
+            this.dataGridView_Space.ReadOnly = true;
+            this.dataGridView_Space.Size = new System.Drawing.Size(395, 303);
+            this.dataGridView_Space.TabIndex = 0;
+            // 
+            // textBox_AddSpaceName
+            // 
+            this.textBox_AddSpaceName.Location = new System.Drawing.Point(420, 29);
+            this.textBox_AddSpaceName.Name = "textBox_AddSpaceName";
+            this.textBox_AddSpaceName.Size = new System.Drawing.Size(148, 20);
+            this.textBox_AddSpaceName.TabIndex = 1;
+            this.textBox_AddSpaceName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_AddSpaceFloor
+            // 
+            this.textBox_AddSpaceFloor.Location = new System.Drawing.Point(420, 55);
+            this.textBox_AddSpaceFloor.Name = "textBox_AddSpaceFloor";
+            this.textBox_AddSpaceFloor.Size = new System.Drawing.Size(148, 20);
+            this.textBox_AddSpaceFloor.TabIndex = 2;
+            this.textBox_AddSpaceFloor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // button_AddSpace
+            // 
+            this.button_AddSpace.Location = new System.Drawing.Point(420, 81);
+            this.button_AddSpace.Name = "button_AddSpace";
+            this.button_AddSpace.Size = new System.Drawing.Size(148, 23);
+            this.button_AddSpace.TabIndex = 3;
+            this.button_AddSpace.Text = "Добавить";
+            this.button_AddSpace.UseVisualStyleBackColor = true;
+            this.button_AddSpace.Click += new System.EventHandler(this.button_AddSpace_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(574, 32);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(91, 13);
+            this.label19.TabIndex = 4;
+            this.label19.Text = "Имя помещения";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(574, 58);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(95, 13);
+            this.label20.TabIndex = 5;
+            this.label20.Text = "Этаж помещения";
+            // 
+            // button_Exit
+            // 
+            this.button_Exit.Image = ((System.Drawing.Image)(resources.GetObject("button_Exit.Image")));
+            this.button_Exit.Location = new System.Drawing.Point(352, 3);
+            this.button_Exit.Name = "button_Exit";
+            this.button_Exit.Size = new System.Drawing.Size(25, 25);
+            this.button_Exit.TabIndex = 21;
+            this.button_Exit.UseVisualStyleBackColor = true;
+            this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click);
             // 
             // Dormytory
             // 
@@ -978,6 +1108,11 @@
             this.contextMenuStrip_AllViolation.ResumeLayout(false);
             this.panel_UpdateViolation.ResumeLayout(false);
             this.panel_UpdateViolation.PerformLayout();
+            this.panel_clear.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Space)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1068,6 +1203,17 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem3;
+        private System.Windows.Forms.Panel panel_clear;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button_Clear;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DataGridView dataGridView_Space;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button button_AddSpace;
+        private System.Windows.Forms.TextBox textBox_AddSpaceFloor;
+        private System.Windows.Forms.TextBox textBox_AddSpaceName;
+        private System.Windows.Forms.Button button_Exit;
     }
 }
 

@@ -149,6 +149,22 @@
   <metadata name="contextMenuStrip_AllViolation.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>413, 46</value>
   </metadata>
+  <data name="button_Exit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAIAAABLixI0AAAABGdBTUEAALGeYUxB9wAAACBjSFJNAACH
+        EAAAjBIAAP1NAACBPgAAWesAARIPAAA85gAAGc66ySIyAAABJmlDQ1BBZG9iZSBSR0IgKDE5OTgpAAAo
+        z2NgYDJwdHFyZRJgYMjNKykKcndSiIiMUmA/z8DGwMwABonJxQWOAQE+IHZefl4qAwb4do2BEURf1gWZ
+        xUAa4EouKCoB0n+A2CgltTiZgYHRAMjOLi8pAIozzgGyRZKywewNIHZRSJAzkH0EyOZLh7CvgNhJEPYT
+        ELsI6Akg+wtIfTqYzcQBNgfClgGxS1IrQPYyOOcXVBZlpmeUKBhaWloqOKbkJ6UqBFcWl6TmFit45iXn
+        FxXkFyWWpKYA1ULcBwaCEIWgENMAarTQZKAyAMUDhPU5EBy+jGJnEGIIkFxaVAZlMjIZE+YjzJgjwcDg
+        v5SBgeUPQsykl4FhgQ4DA/9UhJiaIQODgD4Dw745AMDGT/0ZOjZcAAAACXBIWXMAAC4jAAAuIwF4pT92
+        AAAA2klEQVRIS53U0Q3CMAwE0GwZFih7Nx0EDuw28dlJk57Mz9V+UkEivXKWeW9bKeWznkuoFuYB154b
+        C7PE0W3CMVWTHF2hSWXfH3C0L2XCZ5WjTW3FQuY52tH2H7WQGY6eanumWsiYo15O2hgL6XHU6LYNW0jI
+        taN7LoGF4KV6nG5EiS0k5ND4X/ZK10IIkhlwXYuIdnpcbPlj33gusOgMzeR3xxYdaDvHGYtWtT1zy1WL
+        lrS1GXNq0WMpwwy4n0UP5GaQHsf/97p+l+M4PGcsXZyL56qlKysxXM5fc4U9mVM/0cAAAAAASUVORK5C
+        YII=
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>93</value>
   </metadata>
