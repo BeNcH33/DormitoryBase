@@ -28,6 +28,7 @@ namespace Dormitory
             sqlConnection.Open();
             LoadDate();
             LoadViolationDate();
+            LoadRoomDate();
         }
         private void LoadDate()
         {
@@ -73,12 +74,6 @@ namespace Dormitory
                 MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void toolStripButton_Reload_Click(object sender, EventArgs e)
-        {
-            ReloadDate();
-        }
-
         private void dataGridView1_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -280,5 +275,80 @@ namespace Dormitory
                 MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void LoadRoomDate()
+        {
+            try
+            {
+                sqlDataAdapter = new SqlDataAdapter("SELECT * FROM Table_Room", sqlConnection);
+
+                sqlBuilder = new SqlCommandBuilder(sqlDataAdapter);
+
+                DataSet dataSet = new DataSet();
+                sqlDataAdapter.Fill(dataSet, "Table_Room");
+                dataGridView_InfoRoom.DataSource = dataSet.Tables["Table_Room"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button_AddRoom_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("INSERT INTO Table_Room (NumberRoom, Floor, NumberSeats , Cost) VALUES (@NumberRoom, @Floor, @NumberSeats, @Cost)", sqlConnection);
+                cmd.Parameters.AddWithValue("NumberRoom", textBox_AddNumberRoom.Text);
+                cmd.Parameters.AddWithValue("Floor", textBox_AddNumberFloor.Text);
+                cmd.Parameters.AddWithValue("NumberSeats", textBox_AddNumberSeats.Text);
+                cmd.Parameters.AddWithValue("Cost", textBox_AddCost.Text);
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
+                panel_AddViolation.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadViolation()
+        {
+            try
+            {
+                sqlDataAdapter = new SqlDataAdapter("SELECT * FROM Table_Violation", sqlConnection);
+
+                sqlBuilder = new SqlCommandBuilder(sqlDataAdapter);
+
+                DataSet dataSet = new DataSet();
+                sqlDataAdapter.Fill(dataSet, "Table_Violation");
+                dataGridView_Violation.DataSource = dataSet.Tables["Table_Violation"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button_InfoValiant_Click(object sender, EventArgs e)
+        {
+            LoadViolation();
+            panel_Violation.Visible = true;
+        }
+
+        private void button_Hide_Click(object sender, EventArgs e)
+        {
+            panel_Violation.Visible = false;
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //private void обновитьToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    ReloadDate();
+        //}
     }
 }

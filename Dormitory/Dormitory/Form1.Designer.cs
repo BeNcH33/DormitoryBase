@@ -30,13 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dormytory));
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton_Reload = new System.Windows.Forms.ToolStripButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_AllInformation = new System.Windows.Forms.TabPage();
             this.panel_InfoStudent = new System.Windows.Forms.Panel();
             this.button_NewViolation = new System.Windows.Forms.Button();
             this.panel_AddViolation = new System.Windows.Forms.Panel();
+            this.button_AddNewViolation = new System.Windows.Forms.Button();
             this.comboBox_CategoryViolation = new System.Windows.Forms.ComboBox();
             this.comboBox_UpdateSex = new System.Windows.Forms.ComboBox();
             this.button_ReloadDate = new System.Windows.Forms.Button();
@@ -83,14 +82,32 @@
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView_InfoViolation = new System.Windows.Forms.DataGridView();
             this.tabPage_Rooms = new System.Windows.Forms.TabPage();
+            this.button_AddRoom = new System.Windows.Forms.Button();
+            this.textBox_AddCost = new System.Windows.Forms.TextBox();
+            this.textBox_AddNumberSeats = new System.Windows.Forms.TextBox();
+            this.textBox_AddNumberFloor = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox_AddNumberRoom = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dataGridView_InfoRoom = new System.Windows.Forms.DataGridView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.подробнаяИнформацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip_Violation = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.удалитьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.button_AddNewViolation = new System.Windows.Forms.Button();
-            this.toolStrip1.SuspendLayout();
+            this.изменитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip_Room = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.удалитьToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.изменитьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_InfoValiant = new System.Windows.Forms.Button();
+            this.panel_Violation = new System.Windows.Forms.Panel();
+            this.dataGridView_Violation = new System.Windows.Forms.DataGridView();
+            this.button_Hide = new System.Windows.Forms.Button();
+            this.contextMenuStrip_AllViolation = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage_AllInformation.SuspendLayout();
             this.panel_InfoStudent.SuspendLayout();
@@ -103,29 +120,15 @@
             this.tabPage_AddValiants.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_InfoViolation)).BeginInit();
+            this.tabPage_Rooms.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_InfoRoom)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip_Violation.SuspendLayout();
+            this.contextMenuStrip_Room.SuspendLayout();
+            this.panel_Violation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Violation)).BeginInit();
+            this.contextMenuStrip_AllViolation.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton_Reload});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1022, 25);
-            this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton_Reload
-            // 
-            this.toolStripButton_Reload.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton_Reload.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Reload.Image")));
-            this.toolStripButton_Reload.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_Reload.Name = "toolStripButton_Reload";
-            this.toolStripButton_Reload.Size = new System.Drawing.Size(65, 22);
-            this.toolStripButton_Reload.Text = "Обновить";
-            this.toolStripButton_Reload.Click += new System.EventHandler(this.toolStripButton_Reload_Click);
             // 
             // tabControl1
             // 
@@ -134,20 +137,23 @@
             this.tabControl1.Controls.Add(this.tabPage_AddValiants);
             this.tabControl1.Controls.Add(this.tabPage_Rooms);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 25);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1022, 573);
+            this.tabControl1.Size = new System.Drawing.Size(1418, 598);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage_AllInformation
             // 
+            this.tabPage_AllInformation.Controls.Add(this.button_Hide);
+            this.tabPage_AllInformation.Controls.Add(this.button_InfoValiant);
+            this.tabPage_AllInformation.Controls.Add(this.panel_Violation);
             this.tabPage_AllInformation.Controls.Add(this.panel_InfoStudent);
             this.tabPage_AllInformation.Controls.Add(this.dataGridView_AllStudents);
             this.tabPage_AllInformation.Location = new System.Drawing.Point(4, 22);
             this.tabPage_AllInformation.Name = "tabPage_AllInformation";
             this.tabPage_AllInformation.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_AllInformation.Size = new System.Drawing.Size(1014, 547);
+            this.tabPage_AllInformation.Size = new System.Drawing.Size(1410, 572);
             this.tabPage_AllInformation.TabIndex = 0;
             this.tabPage_AllInformation.Text = "Общие данные";
             this.tabPage_AllInformation.UseVisualStyleBackColor = true;
@@ -192,6 +198,16 @@
             this.panel_AddViolation.Size = new System.Drawing.Size(224, 50);
             this.panel_AddViolation.TabIndex = 19;
             this.panel_AddViolation.Visible = false;
+            // 
+            // button_AddNewViolation
+            // 
+            this.button_AddNewViolation.Location = new System.Drawing.Point(141, 14);
+            this.button_AddNewViolation.Name = "button_AddNewViolation";
+            this.button_AddNewViolation.Size = new System.Drawing.Size(80, 23);
+            this.button_AddNewViolation.TabIndex = 21;
+            this.button_AddNewViolation.Text = "Добавить";
+            this.button_AddNewViolation.UseVisualStyleBackColor = true;
+            this.button_AddNewViolation.Click += new System.EventHandler(this.button_AddNewViolation_Click);
             // 
             // comboBox_CategoryViolation
             // 
@@ -622,12 +638,111 @@
             // 
             // tabPage_Rooms
             // 
+            this.tabPage_Rooms.Controls.Add(this.button_AddRoom);
+            this.tabPage_Rooms.Controls.Add(this.textBox_AddCost);
+            this.tabPage_Rooms.Controls.Add(this.textBox_AddNumberSeats);
+            this.tabPage_Rooms.Controls.Add(this.textBox_AddNumberFloor);
+            this.tabPage_Rooms.Controls.Add(this.label16);
+            this.tabPage_Rooms.Controls.Add(this.label14);
+            this.tabPage_Rooms.Controls.Add(this.label13);
+            this.tabPage_Rooms.Controls.Add(this.textBox_AddNumberRoom);
+            this.tabPage_Rooms.Controls.Add(this.label12);
+            this.tabPage_Rooms.Controls.Add(this.dataGridView_InfoRoom);
             this.tabPage_Rooms.Location = new System.Drawing.Point(4, 22);
             this.tabPage_Rooms.Name = "tabPage_Rooms";
             this.tabPage_Rooms.Size = new System.Drawing.Size(1014, 547);
             this.tabPage_Rooms.TabIndex = 3;
             this.tabPage_Rooms.Text = "Комнаты";
             this.tabPage_Rooms.UseVisualStyleBackColor = true;
+            // 
+            // button_AddRoom
+            // 
+            this.button_AddRoom.Location = new System.Drawing.Point(650, 94);
+            this.button_AddRoom.Name = "button_AddRoom";
+            this.button_AddRoom.Size = new System.Drawing.Size(99, 47);
+            this.button_AddRoom.TabIndex = 9;
+            this.button_AddRoom.Text = "Добавить";
+            this.button_AddRoom.UseVisualStyleBackColor = true;
+            this.button_AddRoom.Click += new System.EventHandler(this.button_AddRoom_Click);
+            // 
+            // textBox_AddCost
+            // 
+            this.textBox_AddCost.Location = new System.Drawing.Point(495, 166);
+            this.textBox_AddCost.Name = "textBox_AddCost";
+            this.textBox_AddCost.Size = new System.Drawing.Size(100, 20);
+            this.textBox_AddCost.TabIndex = 8;
+            this.textBox_AddCost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_AddNumberSeats
+            // 
+            this.textBox_AddNumberSeats.Location = new System.Drawing.Point(495, 127);
+            this.textBox_AddNumberSeats.Name = "textBox_AddNumberSeats";
+            this.textBox_AddNumberSeats.Size = new System.Drawing.Size(100, 20);
+            this.textBox_AddNumberSeats.TabIndex = 7;
+            this.textBox_AddNumberSeats.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_AddNumberFloor
+            // 
+            this.textBox_AddNumberFloor.Location = new System.Drawing.Point(495, 88);
+            this.textBox_AddNumberFloor.Name = "textBox_AddNumberFloor";
+            this.textBox_AddNumberFloor.Size = new System.Drawing.Size(100, 20);
+            this.textBox_AddNumberFloor.TabIndex = 6;
+            this.textBox_AddNumberFloor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(513, 150);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(62, 13);
+            this.label16.TabIndex = 5;
+            this.label16.Text = "Стоимость";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(501, 111);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(94, 13);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "Количество мест";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(526, 72);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(33, 13);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Этаж";
+            // 
+            // textBox_AddNumberRoom
+            // 
+            this.textBox_AddNumberRoom.Location = new System.Drawing.Point(495, 49);
+            this.textBox_AddNumberRoom.Name = "textBox_AddNumberRoom";
+            this.textBox_AddNumberRoom.Size = new System.Drawing.Size(100, 20);
+            this.textBox_AddNumberRoom.TabIndex = 2;
+            this.textBox_AddNumberRoom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(501, 33);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(89, 13);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Номер комнаты";
+            // 
+            // dataGridView_InfoRoom
+            // 
+            this.dataGridView_InfoRoom.AllowUserToAddRows = false;
+            this.dataGridView_InfoRoom.AllowUserToDeleteRows = false;
+            this.dataGridView_InfoRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_InfoRoom.Location = new System.Drawing.Point(9, 4);
+            this.dataGridView_InfoRoom.Name = "dataGridView_InfoRoom";
+            this.dataGridView_InfoRoom.ReadOnly = true;
+            this.dataGridView_InfoRoom.Size = new System.Drawing.Size(447, 368);
+            this.dataGridView_InfoRoom.TabIndex = 0;
             // 
             // openFileDialog1
             // 
@@ -658,41 +773,106 @@
             // contextMenuStrip_Violation
             // 
             this.contextMenuStrip_Violation.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.удалитьToolStripMenuItem1});
+            this.удалитьToolStripMenuItem1,
+            this.изменитьToolStripMenuItem});
             this.contextMenuStrip_Violation.Name = "contextMenuStrip_Violation";
-            this.contextMenuStrip_Violation.Size = new System.Drawing.Size(119, 26);
+            this.contextMenuStrip_Violation.Size = new System.Drawing.Size(129, 48);
             // 
             // удалитьToolStripMenuItem1
             // 
             this.удалитьToolStripMenuItem1.Name = "удалитьToolStripMenuItem1";
-            this.удалитьToolStripMenuItem1.Size = new System.Drawing.Size(118, 22);
+            this.удалитьToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
             this.удалитьToolStripMenuItem1.Text = "Удалить";
             this.удалитьToolStripMenuItem1.Click += new System.EventHandler(this.удалитьToolStripMenuItem1_Click);
             // 
-            // button_AddNewViolation
+            // изменитьToolStripMenuItem
             // 
-            this.button_AddNewViolation.Location = new System.Drawing.Point(141, 14);
-            this.button_AddNewViolation.Name = "button_AddNewViolation";
-            this.button_AddNewViolation.Size = new System.Drawing.Size(80, 23);
-            this.button_AddNewViolation.TabIndex = 21;
-            this.button_AddNewViolation.Text = "Добавить";
-            this.button_AddNewViolation.UseVisualStyleBackColor = true;
-            this.button_AddNewViolation.Click += new System.EventHandler(this.button_AddNewViolation_Click);
+            this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
+            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.изменитьToolStripMenuItem.Text = "Изменить";
+            // 
+            // contextMenuStrip_Room
+            // 
+            this.contextMenuStrip_Room.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.удалитьToolStripMenuItem2,
+            this.изменитьToolStripMenuItem1});
+            this.contextMenuStrip_Room.Name = "contextMenuStrip1";
+            this.contextMenuStrip_Room.Size = new System.Drawing.Size(129, 48);
+            // 
+            // удалитьToolStripMenuItem2
+            // 
+            this.удалитьToolStripMenuItem2.Name = "удалитьToolStripMenuItem2";
+            this.удалитьToolStripMenuItem2.Size = new System.Drawing.Size(128, 22);
+            this.удалитьToolStripMenuItem2.Text = "Удалить";
+            // 
+            // изменитьToolStripMenuItem1
+            // 
+            this.изменитьToolStripMenuItem1.Name = "изменитьToolStripMenuItem1";
+            this.изменитьToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
+            this.изменитьToolStripMenuItem1.Text = "Изменить";
+            // 
+            // button_InfoValiant
+            // 
+            this.button_InfoValiant.Location = new System.Drawing.Point(1058, 3);
+            this.button_InfoValiant.Name = "button_InfoValiant";
+            this.button_InfoValiant.Size = new System.Drawing.Size(149, 23);
+            this.button_InfoValiant.TabIndex = 2;
+            this.button_InfoValiant.Text = "Просмотреть нарушения";
+            this.button_InfoValiant.UseVisualStyleBackColor = true;
+            this.button_InfoValiant.Click += new System.EventHandler(this.button_InfoValiant_Click);
+            // 
+            // panel_Violation
+            // 
+            this.panel_Violation.Controls.Add(this.dataGridView_Violation);
+            this.panel_Violation.Location = new System.Drawing.Point(1058, 32);
+            this.panel_Violation.Name = "panel_Violation";
+            this.panel_Violation.Size = new System.Drawing.Size(329, 257);
+            this.panel_Violation.TabIndex = 3;
+            this.panel_Violation.Visible = false;
+            // 
+            // dataGridView_Violation
+            // 
+            this.dataGridView_Violation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Violation.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView_Violation.Name = "dataGridView_Violation";
+            this.dataGridView_Violation.Size = new System.Drawing.Size(220, 215);
+            this.dataGridView_Violation.TabIndex = 4;
+            // 
+            // button_Hide
+            // 
+            this.button_Hide.Location = new System.Drawing.Point(1213, 3);
+            this.button_Hide.Name = "button_Hide";
+            this.button_Hide.Size = new System.Drawing.Size(94, 23);
+            this.button_Hide.TabIndex = 4;
+            this.button_Hide.Text = "Скрыть";
+            this.button_Hide.UseVisualStyleBackColor = true;
+            this.button_Hide.Click += new System.EventHandler(this.button_Hide_Click);
+            // 
+            // contextMenuStrip_AllViolation
+            // 
+            this.contextMenuStrip_AllViolation.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.contextMenuStrip_AllViolation.Name = "contextMenuStrip_AllViolation";
+            this.contextMenuStrip_AllViolation.Size = new System.Drawing.Size(181, 48);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "Изменить";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // Dormytory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1022, 598);
+            this.ClientSize = new System.Drawing.Size(1418, 598);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.toolStrip1);
             this.Name = "Dormytory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dormitory";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage_AllInformation.ResumeLayout(false);
             this.panel_InfoStudent.ResumeLayout(false);
@@ -709,17 +889,20 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_InfoViolation)).EndInit();
+            this.tabPage_Rooms.ResumeLayout(false);
+            this.tabPage_Rooms.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_InfoRoom)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuStrip_Violation.ResumeLayout(false);
+            this.contextMenuStrip_Room.ResumeLayout(false);
+            this.panel_Violation.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Violation)).EndInit();
+            this.contextMenuStrip_AllViolation.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton_Reload;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage_AllInformation;
         private System.Windows.Forms.DataGridView dataGridView_AllStudents;
@@ -778,6 +961,26 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox_AddCategory;
         private System.Windows.Forms.Button button_AddNewViolation;
+        private System.Windows.Forms.DataGridView dataGridView_InfoRoom;
+        private System.Windows.Forms.TextBox textBox_AddCost;
+        private System.Windows.Forms.TextBox textBox_AddNumberSeats;
+        private System.Windows.Forms.TextBox textBox_AddNumberFloor;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox_AddNumberRoom;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button_AddRoom;
+        private System.Windows.Forms.ToolStripMenuItem изменитьToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip_Room;
+        private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem изменитьToolStripMenuItem1;
+        private System.Windows.Forms.Button button_InfoValiant;
+        private System.Windows.Forms.Panel panel_Violation;
+        private System.Windows.Forms.DataGridView dataGridView_Violation;
+        private System.Windows.Forms.Button button_Hide;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip_AllViolation;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
 
