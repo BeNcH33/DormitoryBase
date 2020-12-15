@@ -30,6 +30,7 @@ namespace Dormitory
             LoadViolationDate();
             LoadRoomDate();
             LoadSpace();
+            LoadCleaningDate();
         }
         private void LoadDate()
         {
@@ -94,7 +95,7 @@ namespace Dormitory
             textBox_UpdateTown.Text = dataGridView_AllStudents.CurrentRow.Cells[6].Value.ToString();
             textBox_UpdatePasportSeries.Text = dataGridView_AllStudents.CurrentRow.Cells[7].Value.ToString();
             textBox_UpdatePasportNumber.Text = dataGridView_AllStudents.CurrentRow.Cells[8].Value.ToString();
-            //pictureBox_Photo.Image = Image.FromFile("@"+dataGridView1.CurrentRow.Cells[9].Value.ToString()+"");
+            pictureBox_Photo.Load(dataGridView_AllStudents.CurrentRow.Cells[9].Value.ToString());
             panel_InfoStudent.Visible = true;
         }
 
@@ -107,8 +108,8 @@ namespace Dormitory
         {
             try
             {
-                //string LocationPhoto = pictureBox_AddPhotoStudent.ImageLocation;
-                SqlCommand cmd = new SqlCommand("INSERT INTO Table_Student (FirstName, Name, LastName, Sex, Age, Town,PasportSeries, PasportNumber) VALUES (@FirstName, @Name, @LastName, @Sex, @Age, @Town, @PasportSeries, @PasportNumber)", sqlConnection);
+                string LocationPhoto = Convert.ToString(openFileDialog1.FileName);
+                SqlCommand cmd = new SqlCommand("INSERT INTO Table_Student (FirstName, Name, LastName, Sex, Age, Town,PasportSeries, PasportNumber, PhotoStudent) VALUES (@FirstName, @Name, @LastName, @Sex, @Age, @Town, @PasportSeries, @PasportNumber, @PhotoStudent)", sqlConnection);
                 cmd.Parameters.AddWithValue("FirstName", textBox_AddFirstName.Text);
                 cmd.Parameters.AddWithValue("Name", textBox_AddName.Text);
                 cmd.Parameters.AddWithValue("LastName", textBox_AddLastName.Text);
@@ -117,8 +118,7 @@ namespace Dormitory
                 cmd.Parameters.AddWithValue("Town", textBox_AddTown.Text);
                 cmd.Parameters.AddWithValue("PasportSeries", textBox_AddPasportSeries.Text);
                 cmd.Parameters.AddWithValue("PasportNumber", textBox_AddPasportNumber.Text);
-                //label10.Text = LocationPhoto;
-                //cmd.Parameters.AddWithValue("PhotoStudent", LocationPhoto);
+                cmd.Parameters.AddWithValue("PhotoStudent", LocationPhoto);
                 cmd.CommandType = CommandType.Text;
                 cmd.ExecuteNonQuery();
                 ReloadDate();
@@ -130,6 +130,8 @@ namespace Dormitory
                 textBox_AddTown.Clear();
                 textBox_AddPasportSeries.Clear();
                 textBox_AddPasportNumber.Clear();
+
+                MessageBox.Show("Студент успешно добавлен", "Сообщение", MessageBoxButtons.OK);
 
             }
             catch (Exception ex)
@@ -186,6 +188,7 @@ namespace Dormitory
             textBox_AddCategory.Clear();
             richTextBox_AddInfo.Clear();
             richTextBox_AddTakeAction.Clear();
+            MessageBox.Show("Операция успешно проведена", "Сообщение", MessageBoxButtons.OK);
         }
         private void ReloadDateViolation ()
         {
@@ -203,8 +206,7 @@ namespace Dormitory
         private void button_ReloadDate_Click(object sender, EventArgs e)
         {
             try
-            {
-                //string LocationPhoto = pictureBox_AddPhotoStudent.ImageLocation;
+            { 
                 SqlCommand cmd = new SqlCommand("UPDATE Table_Student SET FirstName=@FirstName, Name=@Name, LastName=@LastName, Sex=@Sex, Age=@Age, Town=@Town,PasportSeries=@PasportSeries, PasportNumber=@PasportNumber  WHERE ID_student=@id", sqlConnection);
                 cmd.Parameters.AddWithValue("FirstName", textBox_UpdateFirstName.Text);
                 cmd.Parameters.AddWithValue("Name", textBox_UpdateName.Text);
@@ -215,8 +217,6 @@ namespace Dormitory
                 cmd.Parameters.AddWithValue("PasportSeries", textBox_UpdatePasportSeries.Text);
                 cmd.Parameters.AddWithValue("PasportNumber", textBox_UpdatePasportNumber.Text);
                 cmd.Parameters.AddWithValue("id", dataGridView_AllStudents.CurrentRow.Cells[0].Value.ToString());
-                //label10.Text = LocationPhoto;
-                //cmd.Parameters.AddWithValue("PhotoStudent", LocationPhoto);
                 cmd.CommandType = CommandType.Text;
                 cmd.ExecuteNonQuery();
                 ReloadDate();
@@ -323,6 +323,7 @@ namespace Dormitory
                 textBox_AddNumberSeats.Clear();
                 textBox_AddCost.Clear();
                 ReloadInfoRoom();
+                MessageBox.Show("Операция успешно проведена", "Сообщение", MessageBoxButtons.OK);
             }
             catch (Exception ex)
             {
@@ -360,6 +361,7 @@ namespace Dormitory
         {
             panel_Violation.Visible = false;
             button_Clear.Visible = true;
+            button_Hide.Visible = false;
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -505,6 +507,7 @@ namespace Dormitory
                 textBox_AddSpaceName.Clear();
                 textBox_AddSpaceFloor.Clear();
                 ReloadInfoSpace();
+                MessageBox.Show("Операция успешно проведена", "Сообщение", MessageBoxButtons.OK);
             }
             catch (Exception ex)
             {
@@ -532,6 +535,296 @@ namespace Dormitory
         private void button_Clear_Click(object sender, EventArgs e)
         {
             panel_clear.Visible = true;
+            try
+            {
+                sqlDataAdapter = new SqlDataAdapter("SELECT * FROM Table_Clearning", sqlConnection);
+                sqlBuilder = new SqlCommandBuilder(sqlDataAdapter);
+                DataSet dataSet = new DataSet();
+                sqlDataAdapter.Fill(dataSet, "Table_Clearning");
+                dataGridView_Clerning.DataSource = dataSet.Tables["Table_Clearning"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void textBox_AddAge_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || e.KeyChar== 8) return;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Была введена не цифра");
+            }
+        }
+
+        private void textBox_AddPasportSeries_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || e.KeyChar == 8) return;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Была введена не цифра");
+            }
+        }
+
+        private void textBox_AddPasportNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || e.KeyChar == 8) return;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Была введена не цифра");
+            }
+        }
+
+        private void textBox_AddFirstName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar) || e.KeyChar == 8) return;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Была введена цифра, введите букву!");
+            }
+        }
+
+        private void textBox_AddName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar) || e.KeyChar == 8) return;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Была введена цифра, введите букву!");
+            }
+        }
+
+        private void textBox_AddLastName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar) || e.KeyChar == 8) return;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Была введена цифра, введите букву!");
+            }
+        }
+
+        private void textBox_AddTown_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar) || e.KeyChar == 8) return;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Была введена цифра, введите букву!");
+            }
+        }
+
+        private void textBox_UpdadeStudentViolation_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || e.KeyChar == 8) return;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Была введена не цифра");
+            }
+        }
+
+        private void textBox_AddCategory_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar) || e.KeyChar == 8) return;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Была введена цифра, введите букву!");
+            }
+        }
+
+        private void richTextBox_AddInfo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar) || e.KeyChar == 8) return;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Была введена цифра, введите букву!");
+            }
+        }
+
+        private void textBox_AddNumberRoom_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || e.KeyChar == 8) return;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Была введена не цифра");
+            }
+        }
+
+        private void textBox_AddNumberFloor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || e.KeyChar == 8) return;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Была введена не цифра");
+            }
+        }
+
+        private void textBox_AddNumberSeats_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || e.KeyChar == 8) return;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Была введена не цифра");
+            }
+        }
+
+        private void textBox_AddCost_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || e.KeyChar == 8) return;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Была введена не цифра");
+            }
+        }
+
+        private void textBox_AddSpaceName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar) || e.KeyChar == 8) return;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Была введена цифра, введите букву!");
+            }
+        }
+
+        private void textBox_AddSpaceFloor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || e.KeyChar == 8) return;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Была введена не цифра");
+            }
+        }
+
+        private void textBox_UpdateFirstName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar) || e.KeyChar == 8) return;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Была введена цифра, введите букву!");
+            }
+        }
+
+        private void textBox_UpdateName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar) || e.KeyChar == 8) return;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Была введена цифра, введите букву!");
+            }
+        }
+
+        private void textBox_UpdateLastName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar) || e.KeyChar == 8) return;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Была введена цифра, введите букву!");
+            }
+        }
+
+        private void textBox_UpdateAge_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || e.KeyChar == 8) return;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Была введена не цифра");
+            }
+        }
+
+        private void textBox_UpdatePasportSeries_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || e.KeyChar == 8) return;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Была введена не цифра");
+            }
+        }
+
+        private void textBox_UpdatePasportNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || e.KeyChar == 8) return;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Была введена не цифра");
+            }
+        }
+
+        private void textBox_UpdateTown_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar) || e.KeyChar == 8) return;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Была введена цифра, введите букву!");
+            }
+        }
+
+        private void LoadCleaningDate()
+        {
+            try
+            {
+                sqlDataAdapter = new SqlDataAdapter("SELECT * FROM Table_Clearning", sqlConnection);
+                sqlBuilder = new SqlCommandBuilder(sqlDataAdapter);
+                DataSet dataSet = new DataSet();
+                sqlDataAdapter.Fill(dataSet, "Table_Clearning");
+                dataGridView_AddCleaning.DataSource = dataSet.Tables["Table_Clearning"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button_AddCleaning_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("INSERT INTO Table_Clearning (ID_Space, Date, ID_student) VALUES (@ID_Space, @Date, @ID_student)", sqlConnection);
+                cmd.Parameters.AddWithValue("ID_Space", textBox_IDRoom.Text);
+                cmd.Parameters.AddWithValue("Date", dateTimePicker_Clearning.Value);
+                cmd.Parameters.AddWithValue("ID_student", textBoxStudentID.Text);
+                cmd.CommandType = CommandType.Text;
+                textBox_IDRoom.Clear();
+                textBoxStudentID.Clear();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Операция успешно проведена", "Сообщение", MessageBoxButtons.OK);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonRELOAD_Click(object sender, EventArgs e)
+        {
+            LoadCleaningDate();
+        }
+
+        private void button_LoadRoom_Click(object sender, EventArgs e)
+        {
+            LoadSpace();
         }
     }
 }

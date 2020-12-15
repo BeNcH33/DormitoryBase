@@ -32,6 +32,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dormytory));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_AllInformation = new System.Windows.Forms.TabPage();
+            this.panel_clear = new System.Windows.Forms.Panel();
+            this.button_Exit = new System.Windows.Forms.Button();
+            this.dataGridView_Clerning = new System.Windows.Forms.DataGridView();
+            this.button_Clear = new System.Windows.Forms.Button();
+            this.panel_UpdateViolation = new System.Windows.Forms.Panel();
+            this.comboBox_ViolationUpdate = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBox_UpdadeStudentViolation = new System.Windows.Forms.TextBox();
+            this.button_UpdateViolation = new System.Windows.Forms.Button();
             this.button_Hide = new System.Windows.Forms.Button();
             this.button_InfoValiant = new System.Windows.Forms.Button();
             this.panel_Violation = new System.Windows.Forms.Panel();
@@ -54,7 +64,6 @@
             this.pictureBox_Photo = new System.Windows.Forms.PictureBox();
             this.dataGridView_AllStudents = new System.Windows.Forms.DataGridView();
             this.tabPage_AddStudent = new System.Windows.Forms.TabPage();
-            this.label10 = new System.Windows.Forms.Label();
             this.button_LoadPicture = new System.Windows.Forms.Button();
             this.pictureBox_AddPhotoStudent = new System.Windows.Forms.PictureBox();
             this.panelAddStudent = new System.Windows.Forms.Panel();
@@ -96,6 +105,15 @@
             this.textBox_AddNumberRoom = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.dataGridView_InfoRoom = new System.Windows.Forms.DataGridView();
+            this.tabPage_Other = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.dataGridView_Space = new System.Windows.Forms.DataGridView();
+            this.label20 = new System.Windows.Forms.Label();
+            this.textBox_AddSpaceName = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBox_AddSpaceFloor = new System.Windows.Forms.TextBox();
+            this.button_AddSpace = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.подробнаяИнформацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -108,26 +126,24 @@
             this.изменитьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip_AllViolation = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel_UpdateViolation = new System.Windows.Forms.Panel();
-            this.button_UpdateViolation = new System.Windows.Forms.Button();
-            this.textBox_UpdadeStudentViolation = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.comboBox_ViolationUpdate = new System.Windows.Forms.ComboBox();
             this.удалитьToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.button_Clear = new System.Windows.Forms.Button();
-            this.panel_clear = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView_Space = new System.Windows.Forms.DataGridView();
-            this.textBox_AddSpaceName = new System.Windows.Forms.TextBox();
-            this.textBox_AddSpaceFloor = new System.Windows.Forms.TextBox();
-            this.button_AddSpace = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.button_Exit = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.dataGridView_AddCleaning = new System.Windows.Forms.DataGridView();
+            this.textBoxStudentID = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.button_AddCleaning = new System.Windows.Forms.Button();
+            this.dateTimePicker_Clearning = new System.Windows.Forms.DateTimePicker();
+            this.buttonRELOAD = new System.Windows.Forms.Button();
+            this.textBox_IDRoom = new System.Windows.Forms.TextBox();
+            this.button_LoadRoom = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage_AllInformation.SuspendLayout();
+            this.panel_clear.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Clerning)).BeginInit();
+            this.panel_UpdateViolation.SuspendLayout();
             this.panel_Violation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Violation)).BeginInit();
             this.panel_InfoStudent.SuspendLayout();
@@ -142,15 +158,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_InfoViolation)).BeginInit();
             this.tabPage_Rooms.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_InfoRoom)).BeginInit();
+            this.tabPage_Other.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Space)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip_Violation.SuspendLayout();
             this.contextMenuStrip_Room.SuspendLayout();
             this.contextMenuStrip_AllViolation.SuspendLayout();
-            this.panel_UpdateViolation.SuspendLayout();
-            this.panel_clear.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Space)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_AddCleaning)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -159,7 +175,7 @@
             this.tabControl1.Controls.Add(this.tabPage_AddStudent);
             this.tabControl1.Controls.Add(this.tabPage_AddValiants);
             this.tabControl1.Controls.Add(this.tabPage_Rooms);
-            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage_Other);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -184,6 +200,104 @@
             this.tabPage_AllInformation.TabIndex = 0;
             this.tabPage_AllInformation.Text = "Общие данные";
             this.tabPage_AllInformation.UseVisualStyleBackColor = true;
+            // 
+            // panel_clear
+            // 
+            this.panel_clear.Controls.Add(this.button_Exit);
+            this.panel_clear.Controls.Add(this.dataGridView_Clerning);
+            this.panel_clear.Location = new System.Drawing.Point(1061, 350);
+            this.panel_clear.Name = "panel_clear";
+            this.panel_clear.Size = new System.Drawing.Size(298, 257);
+            this.panel_clear.TabIndex = 6;
+            this.panel_clear.Visible = false;
+            // 
+            // button_Exit
+            // 
+            this.button_Exit.Image = ((System.Drawing.Image)(resources.GetObject("button_Exit.Image")));
+            this.button_Exit.Location = new System.Drawing.Point(267, 3);
+            this.button_Exit.Name = "button_Exit";
+            this.button_Exit.Size = new System.Drawing.Size(25, 25);
+            this.button_Exit.TabIndex = 21;
+            this.button_Exit.UseVisualStyleBackColor = true;
+            this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click);
+            // 
+            // dataGridView_Clerning
+            // 
+            this.dataGridView_Clerning.AllowUserToAddRows = false;
+            this.dataGridView_Clerning.AllowUserToDeleteRows = false;
+            this.dataGridView_Clerning.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Clerning.Location = new System.Drawing.Point(4, 0);
+            this.dataGridView_Clerning.Name = "dataGridView_Clerning";
+            this.dataGridView_Clerning.ReadOnly = true;
+            this.dataGridView_Clerning.Size = new System.Drawing.Size(257, 271);
+            this.dataGridView_Clerning.TabIndex = 0;
+            // 
+            // button_Clear
+            // 
+            this.button_Clear.Location = new System.Drawing.Point(1058, 34);
+            this.button_Clear.Name = "button_Clear";
+            this.button_Clear.Size = new System.Drawing.Size(242, 23);
+            this.button_Clear.TabIndex = 6;
+            this.button_Clear.Text = "Просмотреть график уборок";
+            this.button_Clear.UseVisualStyleBackColor = true;
+            this.button_Clear.Click += new System.EventHandler(this.button_Clear_Click);
+            // 
+            // panel_UpdateViolation
+            // 
+            this.panel_UpdateViolation.Controls.Add(this.comboBox_ViolationUpdate);
+            this.panel_UpdateViolation.Controls.Add(this.label18);
+            this.panel_UpdateViolation.Controls.Add(this.label17);
+            this.panel_UpdateViolation.Controls.Add(this.textBox_UpdadeStudentViolation);
+            this.panel_UpdateViolation.Controls.Add(this.button_UpdateViolation);
+            this.panel_UpdateViolation.Location = new System.Drawing.Point(1061, 256);
+            this.panel_UpdateViolation.Name = "panel_UpdateViolation";
+            this.panel_UpdateViolation.Size = new System.Drawing.Size(215, 100);
+            this.panel_UpdateViolation.TabIndex = 5;
+            this.panel_UpdateViolation.Visible = false;
+            // 
+            // comboBox_ViolationUpdate
+            // 
+            this.comboBox_ViolationUpdate.FormattingEnabled = true;
+            this.comboBox_ViolationUpdate.Location = new System.Drawing.Point(4, 30);
+            this.comboBox_ViolationUpdate.Name = "comboBox_ViolationUpdate";
+            this.comboBox_ViolationUpdate.Size = new System.Drawing.Size(100, 21);
+            this.comboBox_ViolationUpdate.TabIndex = 4;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(110, 33);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(64, 13);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "Нарушение";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(110, 7);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(64, 13);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "Id студента";
+            // 
+            // textBox_UpdadeStudentViolation
+            // 
+            this.textBox_UpdadeStudentViolation.Location = new System.Drawing.Point(4, 4);
+            this.textBox_UpdadeStudentViolation.Name = "textBox_UpdadeStudentViolation";
+            this.textBox_UpdadeStudentViolation.Size = new System.Drawing.Size(100, 20);
+            this.textBox_UpdadeStudentViolation.TabIndex = 1;
+            this.textBox_UpdadeStudentViolation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_UpdadeStudentViolation_KeyPress);
+            // 
+            // button_UpdateViolation
+            // 
+            this.button_UpdateViolation.Location = new System.Drawing.Point(137, 65);
+            this.button_UpdateViolation.Name = "button_UpdateViolation";
+            this.button_UpdateViolation.Size = new System.Drawing.Size(75, 23);
+            this.button_UpdateViolation.TabIndex = 0;
+            this.button_UpdateViolation.Text = "Изменить";
+            this.button_UpdateViolation.UseVisualStyleBackColor = true;
+            this.button_UpdateViolation.Click += new System.EventHandler(this.button_UpdateViolation_Click);
             // 
             // button_Hide
             // 
@@ -242,7 +356,7 @@
             this.panel_InfoStudent.Controls.Add(this.textBox_UpdateFirstName);
             this.panel_InfoStudent.Controls.Add(this.button_ClosePanel);
             this.panel_InfoStudent.Controls.Add(this.pictureBox_Photo);
-            this.panel_InfoStudent.Location = new System.Drawing.Point(284, 18);
+            this.panel_InfoStudent.Location = new System.Drawing.Point(492, 27);
             this.panel_InfoStudent.Name = "panel_InfoStudent";
             this.panel_InfoStudent.Size = new System.Drawing.Size(560, 545);
             this.panel_InfoStudent.TabIndex = 1;
@@ -314,6 +428,7 @@
             this.textBox_UpdatePasportNumber.Size = new System.Drawing.Size(158, 20);
             this.textBox_UpdatePasportNumber.TabIndex = 16;
             this.textBox_UpdatePasportNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_UpdatePasportNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_UpdatePasportNumber_KeyPress);
             // 
             // textBox_UpdatePasportSeries
             // 
@@ -322,22 +437,25 @@
             this.textBox_UpdatePasportSeries.Size = new System.Drawing.Size(158, 20);
             this.textBox_UpdatePasportSeries.TabIndex = 15;
             this.textBox_UpdatePasportSeries.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_UpdatePasportSeries.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_UpdatePasportSeries_KeyPress);
             // 
             // textBox_UpdateTown
             // 
-            this.textBox_UpdateTown.Location = new System.Drawing.Point(111, 381);
+            this.textBox_UpdateTown.Location = new System.Drawing.Point(111, 356);
             this.textBox_UpdateTown.Name = "textBox_UpdateTown";
             this.textBox_UpdateTown.Size = new System.Drawing.Size(158, 20);
             this.textBox_UpdateTown.TabIndex = 14;
             this.textBox_UpdateTown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_UpdateTown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_UpdateTown_KeyPress);
             // 
             // textBox_UpdateAge
             // 
-            this.textBox_UpdateAge.Location = new System.Drawing.Point(111, 355);
+            this.textBox_UpdateAge.Location = new System.Drawing.Point(111, 381);
             this.textBox_UpdateAge.Name = "textBox_UpdateAge";
             this.textBox_UpdateAge.Size = new System.Drawing.Size(158, 20);
             this.textBox_UpdateAge.TabIndex = 13;
             this.textBox_UpdateAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_UpdateAge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_UpdateAge_KeyPress);
             // 
             // textBox_UpdateLastName
             // 
@@ -346,6 +464,7 @@
             this.textBox_UpdateLastName.Size = new System.Drawing.Size(158, 20);
             this.textBox_UpdateLastName.TabIndex = 12;
             this.textBox_UpdateLastName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_UpdateLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_UpdateLastName_KeyPress);
             // 
             // textBox_UpdateName
             // 
@@ -354,6 +473,7 @@
             this.textBox_UpdateName.Size = new System.Drawing.Size(158, 20);
             this.textBox_UpdateName.TabIndex = 11;
             this.textBox_UpdateName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_UpdateName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_UpdateName_KeyPress);
             // 
             // textBox_UpdateFirstName
             // 
@@ -362,6 +482,7 @@
             this.textBox_UpdateFirstName.Size = new System.Drawing.Size(158, 20);
             this.textBox_UpdateFirstName.TabIndex = 10;
             this.textBox_UpdateFirstName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_UpdateFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_UpdateFirstName_KeyPress);
             // 
             // button_ClosePanel
             // 
@@ -395,7 +516,6 @@
             // 
             // tabPage_AddStudent
             // 
-            this.tabPage_AddStudent.Controls.Add(this.label10);
             this.tabPage_AddStudent.Controls.Add(this.button_LoadPicture);
             this.tabPage_AddStudent.Controls.Add(this.pictureBox_AddPhotoStudent);
             this.tabPage_AddStudent.Controls.Add(this.panelAddStudent);
@@ -407,15 +527,6 @@
             this.tabPage_AddStudent.TabIndex = 1;
             this.tabPage_AddStudent.Text = "Добавление студента";
             this.tabPage_AddStudent.UseVisualStyleBackColor = true;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(153, 399);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "label10";
             // 
             // button_LoadPicture
             // 
@@ -486,6 +597,7 @@
             this.textBox_AddTown.Size = new System.Drawing.Size(192, 20);
             this.textBox_AddTown.TabIndex = 14;
             this.textBox_AddTown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_AddTown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_AddTown_KeyPress);
             // 
             // label15
             // 
@@ -503,6 +615,7 @@
             this.textBox_AddPasportNumber.Size = new System.Drawing.Size(192, 20);
             this.textBox_AddPasportNumber.TabIndex = 11;
             this.textBox_AddPasportNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_AddPasportNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_AddPasportNumber_KeyPress);
             // 
             // label6
             // 
@@ -529,6 +642,7 @@
             this.textBox_AddPasportSeries.Size = new System.Drawing.Size(192, 20);
             this.textBox_AddPasportSeries.TabIndex = 8;
             this.textBox_AddPasportSeries.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_AddPasportSeries.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_AddPasportSeries_KeyPress);
             // 
             // textBox_AddAge
             // 
@@ -537,6 +651,7 @@
             this.textBox_AddAge.Size = new System.Drawing.Size(192, 20);
             this.textBox_AddAge.TabIndex = 7;
             this.textBox_AddAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_AddAge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_AddAge_KeyPress);
             // 
             // label4
             // 
@@ -581,6 +696,7 @@
             this.textBox_AddLastName.Size = new System.Drawing.Size(192, 20);
             this.textBox_AddLastName.TabIndex = 2;
             this.textBox_AddLastName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_AddLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_AddLastName_KeyPress);
             // 
             // textBox_AddName
             // 
@@ -589,6 +705,7 @@
             this.textBox_AddName.Size = new System.Drawing.Size(192, 20);
             this.textBox_AddName.TabIndex = 1;
             this.textBox_AddName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_AddName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_AddName_KeyPress);
             // 
             // textBox_AddFirstName
             // 
@@ -597,6 +714,7 @@
             this.textBox_AddFirstName.Size = new System.Drawing.Size(192, 20);
             this.textBox_AddFirstName.TabIndex = 0;
             this.textBox_AddFirstName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_AddFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_AddFirstName_KeyPress);
             // 
             // button_Add
             // 
@@ -648,6 +766,7 @@
             this.textBox_AddCategory.Name = "textBox_AddCategory";
             this.textBox_AddCategory.Size = new System.Drawing.Size(130, 20);
             this.textBox_AddCategory.TabIndex = 9;
+            this.textBox_AddCategory.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_AddCategory_KeyPress);
             // 
             // richTextBox_AddTakeAction
             // 
@@ -664,6 +783,7 @@
             this.richTextBox_AddInfo.Size = new System.Drawing.Size(232, 137);
             this.richTextBox_AddInfo.TabIndex = 7;
             this.richTextBox_AddInfo.Text = "";
+            this.richTextBox_AddInfo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.richTextBox_AddInfo_KeyPress);
             // 
             // label9
             // 
@@ -701,7 +821,7 @@
             this.dataGridView_InfoViolation.Location = new System.Drawing.Point(8, 30);
             this.dataGridView_InfoViolation.Name = "dataGridView_InfoViolation";
             this.dataGridView_InfoViolation.ReadOnly = true;
-            this.dataGridView_InfoViolation.Size = new System.Drawing.Size(526, 425);
+            this.dataGridView_InfoViolation.Size = new System.Drawing.Size(454, 425);
             this.dataGridView_InfoViolation.TabIndex = 0;
             this.dataGridView_InfoViolation.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_InfoViolation_MouseUp);
             // 
@@ -741,6 +861,7 @@
             this.textBox_AddCost.Size = new System.Drawing.Size(100, 20);
             this.textBox_AddCost.TabIndex = 8;
             this.textBox_AddCost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_AddCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_AddCost_KeyPress);
             // 
             // textBox_AddNumberSeats
             // 
@@ -749,6 +870,7 @@
             this.textBox_AddNumberSeats.Size = new System.Drawing.Size(100, 20);
             this.textBox_AddNumberSeats.TabIndex = 7;
             this.textBox_AddNumberSeats.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_AddNumberSeats.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_AddNumberSeats_KeyPress);
             // 
             // textBox_AddNumberFloor
             // 
@@ -757,6 +879,7 @@
             this.textBox_AddNumberFloor.Size = new System.Drawing.Size(100, 20);
             this.textBox_AddNumberFloor.TabIndex = 6;
             this.textBox_AddNumberFloor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_AddNumberFloor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_AddNumberFloor_KeyPress);
             // 
             // label16
             // 
@@ -792,6 +915,7 @@
             this.textBox_AddNumberRoom.Size = new System.Drawing.Size(100, 20);
             this.textBox_AddNumberRoom.TabIndex = 2;
             this.textBox_AddNumberRoom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_AddNumberRoom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_AddNumberRoom_KeyPress);
             // 
             // label12
             // 
@@ -812,6 +936,98 @@
             this.dataGridView_InfoRoom.ReadOnly = true;
             this.dataGridView_InfoRoom.Size = new System.Drawing.Size(447, 368);
             this.dataGridView_InfoRoom.TabIndex = 0;
+            // 
+            // tabPage_Other
+            // 
+            this.tabPage_Other.Controls.Add(this.panel3);
+            this.tabPage_Other.Controls.Add(this.panel2);
+            this.tabPage_Other.Location = new System.Drawing.Point(4, 22);
+            this.tabPage_Other.Name = "tabPage_Other";
+            this.tabPage_Other.Size = new System.Drawing.Size(1308, 572);
+            this.tabPage_Other.TabIndex = 4;
+            this.tabPage_Other.Text = "Остальные функции";
+            this.tabPage_Other.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.button_LoadRoom);
+            this.panel2.Controls.Add(this.label21);
+            this.panel2.Controls.Add(this.dataGridView_Space);
+            this.panel2.Controls.Add(this.label20);
+            this.panel2.Controls.Add(this.textBox_AddSpaceName);
+            this.panel2.Controls.Add(this.label19);
+            this.panel2.Controls.Add(this.textBox_AddSpaceFloor);
+            this.panel2.Controls.Add(this.button_AddSpace);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(666, 329);
+            this.panel2.TabIndex = 6;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(5, 7);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(132, 13);
+            this.label21.TabIndex = 6;
+            this.label21.Text = "Добавление помещений";
+            // 
+            // dataGridView_Space
+            // 
+            this.dataGridView_Space.AllowUserToAddRows = false;
+            this.dataGridView_Space.AllowUserToDeleteRows = false;
+            this.dataGridView_Space.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Space.Location = new System.Drawing.Point(5, 23);
+            this.dataGridView_Space.Name = "dataGridView_Space";
+            this.dataGridView_Space.ReadOnly = true;
+            this.dataGridView_Space.Size = new System.Drawing.Size(395, 303);
+            this.dataGridView_Space.TabIndex = 0;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(559, 55);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(95, 13);
+            this.label20.TabIndex = 5;
+            this.label20.Text = "Этаж помещения";
+            // 
+            // textBox_AddSpaceName
+            // 
+            this.textBox_AddSpaceName.Location = new System.Drawing.Point(405, 23);
+            this.textBox_AddSpaceName.Name = "textBox_AddSpaceName";
+            this.textBox_AddSpaceName.Size = new System.Drawing.Size(148, 20);
+            this.textBox_AddSpaceName.TabIndex = 1;
+            this.textBox_AddSpaceName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_AddSpaceName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_AddSpaceName_KeyPress);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(559, 26);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(91, 13);
+            this.label19.TabIndex = 4;
+            this.label19.Text = "Имя помещения";
+            // 
+            // textBox_AddSpaceFloor
+            // 
+            this.textBox_AddSpaceFloor.Location = new System.Drawing.Point(405, 52);
+            this.textBox_AddSpaceFloor.Name = "textBox_AddSpaceFloor";
+            this.textBox_AddSpaceFloor.Size = new System.Drawing.Size(148, 20);
+            this.textBox_AddSpaceFloor.TabIndex = 2;
+            this.textBox_AddSpaceFloor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_AddSpaceFloor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_AddSpaceFloor_KeyPress);
+            // 
+            // button_AddSpace
+            // 
+            this.button_AddSpace.Location = new System.Drawing.Point(405, 78);
+            this.button_AddSpace.Name = "button_AddSpace";
+            this.button_AddSpace.Size = new System.Drawing.Size(148, 23);
+            this.button_AddSpace.TabIndex = 3;
+            this.button_AddSpace.Text = "Добавить";
+            this.button_AddSpace.UseVisualStyleBackColor = true;
+            this.button_AddSpace.Click += new System.EventHandler(this.button_AddSpace_Click);
             // 
             // openFileDialog1
             // 
@@ -896,62 +1112,6 @@
             this.toolStripMenuItem1.Text = "Изменить";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
-            // panel_UpdateViolation
-            // 
-            this.panel_UpdateViolation.Controls.Add(this.comboBox_ViolationUpdate);
-            this.panel_UpdateViolation.Controls.Add(this.label18);
-            this.panel_UpdateViolation.Controls.Add(this.label17);
-            this.panel_UpdateViolation.Controls.Add(this.textBox_UpdadeStudentViolation);
-            this.panel_UpdateViolation.Controls.Add(this.button_UpdateViolation);
-            this.panel_UpdateViolation.Location = new System.Drawing.Point(1061, 256);
-            this.panel_UpdateViolation.Name = "panel_UpdateViolation";
-            this.panel_UpdateViolation.Size = new System.Drawing.Size(215, 100);
-            this.panel_UpdateViolation.TabIndex = 5;
-            this.panel_UpdateViolation.Visible = false;
-            // 
-            // button_UpdateViolation
-            // 
-            this.button_UpdateViolation.Location = new System.Drawing.Point(137, 65);
-            this.button_UpdateViolation.Name = "button_UpdateViolation";
-            this.button_UpdateViolation.Size = new System.Drawing.Size(75, 23);
-            this.button_UpdateViolation.TabIndex = 0;
-            this.button_UpdateViolation.Text = "Изменить";
-            this.button_UpdateViolation.UseVisualStyleBackColor = true;
-            this.button_UpdateViolation.Click += new System.EventHandler(this.button_UpdateViolation_Click);
-            // 
-            // textBox_UpdadeStudentViolation
-            // 
-            this.textBox_UpdadeStudentViolation.Location = new System.Drawing.Point(4, 4);
-            this.textBox_UpdadeStudentViolation.Name = "textBox_UpdadeStudentViolation";
-            this.textBox_UpdadeStudentViolation.Size = new System.Drawing.Size(100, 20);
-            this.textBox_UpdadeStudentViolation.TabIndex = 1;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(110, 7);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(64, 13);
-            this.label17.TabIndex = 2;
-            this.label17.Text = "Id студента";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(110, 33);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(64, 13);
-            this.label18.TabIndex = 3;
-            this.label18.Text = "Нарушение";
-            // 
-            // comboBox_ViolationUpdate
-            // 
-            this.comboBox_ViolationUpdate.FormattingEnabled = true;
-            this.comboBox_ViolationUpdate.Location = new System.Drawing.Point(4, 30);
-            this.comboBox_ViolationUpdate.Name = "comboBox_ViolationUpdate";
-            this.comboBox_ViolationUpdate.Size = new System.Drawing.Size(100, 21);
-            this.comboBox_ViolationUpdate.TabIndex = 4;
-            // 
             // удалитьToolStripMenuItem3
             // 
             this.удалитьToolStripMenuItem3.Name = "удалитьToolStripMenuItem3";
@@ -959,116 +1119,122 @@
             this.удалитьToolStripMenuItem3.Text = "Удалить";
             this.удалитьToolStripMenuItem3.Click += new System.EventHandler(this.удалитьToolStripMenuItem3_Click);
             // 
-            // button_Clear
+            // panel3
             // 
-            this.button_Clear.Location = new System.Drawing.Point(1058, 34);
-            this.button_Clear.Name = "button_Clear";
-            this.button_Clear.Size = new System.Drawing.Size(242, 23);
-            this.button_Clear.TabIndex = 6;
-            this.button_Clear.Text = "Просмотреть график уборок";
-            this.button_Clear.UseVisualStyleBackColor = true;
-            this.button_Clear.Click += new System.EventHandler(this.button_Clear_Click);
+            this.panel3.Controls.Add(this.textBox_IDRoom);
+            this.panel3.Controls.Add(this.buttonRELOAD);
+            this.panel3.Controls.Add(this.dateTimePicker_Clearning);
+            this.panel3.Controls.Add(this.button_AddCleaning);
+            this.panel3.Controls.Add(this.label25);
+            this.panel3.Controls.Add(this.label24);
+            this.panel3.Controls.Add(this.label23);
+            this.panel3.Controls.Add(this.textBoxStudentID);
+            this.panel3.Controls.Add(this.dataGridView_AddCleaning);
+            this.panel3.Controls.Add(this.label22);
+            this.panel3.Location = new System.Drawing.Point(675, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(630, 329);
+            this.panel3.TabIndex = 7;
             // 
-            // panel_clear
+            // label22
             // 
-            this.panel_clear.Controls.Add(this.button_Exit);
-            this.panel_clear.Controls.Add(this.dataGridView1);
-            this.panel_clear.Location = new System.Drawing.Point(922, 63);
-            this.panel_clear.Name = "panel_clear";
-            this.panel_clear.Size = new System.Drawing.Size(380, 367);
-            this.panel_clear.TabIndex = 6;
-            this.panel_clear.Visible = false;
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(12, 7);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(108, 13);
+            this.label22.TabIndex = 7;
+            this.label22.Text = "Добавление уборки";
             // 
-            // dataGridView1
+            // dataGridView_AddCleaning
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(257, 267);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView_AddCleaning.AllowUserToAddRows = false;
+            this.dataGridView_AddCleaning.AllowUserToDeleteRows = false;
+            this.dataGridView_AddCleaning.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_AddCleaning.Location = new System.Drawing.Point(3, 23);
+            this.dataGridView_AddCleaning.Name = "dataGridView_AddCleaning";
+            this.dataGridView_AddCleaning.ReadOnly = true;
+            this.dataGridView_AddCleaning.Size = new System.Drawing.Size(395, 303);
+            this.dataGridView_AddCleaning.TabIndex = 7;
             // 
-            // tabPage1
+            // textBoxStudentID
             // 
-            this.tabPage1.Controls.Add(this.label20);
-            this.tabPage1.Controls.Add(this.label19);
-            this.tabPage1.Controls.Add(this.button_AddSpace);
-            this.tabPage1.Controls.Add(this.textBox_AddSpaceFloor);
-            this.tabPage1.Controls.Add(this.textBox_AddSpaceName);
-            this.tabPage1.Controls.Add(this.dataGridView_Space);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1308, 572);
-            this.tabPage1.TabIndex = 4;
-            this.tabPage1.Text = "Помещения";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.textBoxStudentID.Location = new System.Drawing.Point(404, 26);
+            this.textBoxStudentID.Name = "textBoxStudentID";
+            this.textBoxStudentID.Size = new System.Drawing.Size(44, 20);
+            this.textBoxStudentID.TabIndex = 7;
+            this.textBoxStudentID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // dataGridView_Space
+            // label23
             // 
-            this.dataGridView_Space.AllowUserToAddRows = false;
-            this.dataGridView_Space.AllowUserToDeleteRows = false;
-            this.dataGridView_Space.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Space.Location = new System.Drawing.Point(9, 4);
-            this.dataGridView_Space.Name = "dataGridView_Space";
-            this.dataGridView_Space.ReadOnly = true;
-            this.dataGridView_Space.Size = new System.Drawing.Size(395, 303);
-            this.dataGridView_Space.TabIndex = 0;
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(454, 29);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(66, 13);
+            this.label23.TabIndex = 7;
+            this.label23.Text = "ID студента";
             // 
-            // textBox_AddSpaceName
+            // label24
             // 
-            this.textBox_AddSpaceName.Location = new System.Drawing.Point(420, 29);
-            this.textBox_AddSpaceName.Name = "textBox_AddSpaceName";
-            this.textBox_AddSpaceName.Size = new System.Drawing.Size(148, 20);
-            this.textBox_AddSpaceName.TabIndex = 1;
-            this.textBox_AddSpaceName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(531, 55);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(71, 13);
+            this.label24.TabIndex = 7;
+            this.label24.Text = "Дата уборки";
             // 
-            // textBox_AddSpaceFloor
+            // label25
             // 
-            this.textBox_AddSpaceFloor.Location = new System.Drawing.Point(420, 55);
-            this.textBox_AddSpaceFloor.Name = "textBox_AddSpaceFloor";
-            this.textBox_AddSpaceFloor.Size = new System.Drawing.Size(148, 20);
-            this.textBox_AddSpaceFloor.TabIndex = 2;
-            this.textBox_AddSpaceFloor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(461, 82);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(80, 13);
+            this.label25.TabIndex = 8;
+            this.label25.Text = "ID помещения";
             // 
-            // button_AddSpace
+            // button_AddCleaning
             // 
-            this.button_AddSpace.Location = new System.Drawing.Point(420, 81);
-            this.button_AddSpace.Name = "button_AddSpace";
-            this.button_AddSpace.Size = new System.Drawing.Size(148, 23);
-            this.button_AddSpace.TabIndex = 3;
-            this.button_AddSpace.Text = "Добавить";
-            this.button_AddSpace.UseVisualStyleBackColor = true;
-            this.button_AddSpace.Click += new System.EventHandler(this.button_AddSpace_Click);
+            this.button_AddCleaning.Location = new System.Drawing.Point(404, 106);
+            this.button_AddCleaning.Name = "button_AddCleaning";
+            this.button_AddCleaning.Size = new System.Drawing.Size(148, 23);
+            this.button_AddCleaning.TabIndex = 7;
+            this.button_AddCleaning.Text = "Добавить";
+            this.button_AddCleaning.UseVisualStyleBackColor = true;
+            this.button_AddCleaning.Click += new System.EventHandler(this.button_AddCleaning_Click);
             // 
-            // label19
+            // dateTimePicker_Clearning
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(574, 32);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(91, 13);
-            this.label19.TabIndex = 4;
-            this.label19.Text = "Имя помещения";
+            this.dateTimePicker_Clearning.Location = new System.Drawing.Point(404, 52);
+            this.dateTimePicker_Clearning.Name = "dateTimePicker_Clearning";
+            this.dateTimePicker_Clearning.Size = new System.Drawing.Size(121, 20);
+            this.dateTimePicker_Clearning.TabIndex = 9;
             // 
-            // label20
+            // buttonRELOAD
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(574, 58);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(95, 13);
-            this.label20.TabIndex = 5;
-            this.label20.Text = "Этаж помещения";
+            this.buttonRELOAD.Location = new System.Drawing.Point(538, 23);
+            this.buttonRELOAD.Name = "buttonRELOAD";
+            this.buttonRELOAD.Size = new System.Drawing.Size(84, 23);
+            this.buttonRELOAD.TabIndex = 7;
+            this.buttonRELOAD.Text = "Загрузить";
+            this.buttonRELOAD.UseVisualStyleBackColor = true;
+            this.buttonRELOAD.Click += new System.EventHandler(this.buttonRELOAD_Click);
             // 
-            // button_Exit
+            // textBox_IDRoom
             // 
-            this.button_Exit.Image = ((System.Drawing.Image)(resources.GetObject("button_Exit.Image")));
-            this.button_Exit.Location = new System.Drawing.Point(352, 3);
-            this.button_Exit.Name = "button_Exit";
-            this.button_Exit.Size = new System.Drawing.Size(25, 25);
-            this.button_Exit.TabIndex = 21;
-            this.button_Exit.UseVisualStyleBackColor = true;
-            this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click);
+            this.textBox_IDRoom.Location = new System.Drawing.Point(404, 79);
+            this.textBox_IDRoom.Name = "textBox_IDRoom";
+            this.textBox_IDRoom.Size = new System.Drawing.Size(44, 20);
+            this.textBox_IDRoom.TabIndex = 10;
+            this.textBox_IDRoom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // button_LoadRoom
+            // 
+            this.button_LoadRoom.Location = new System.Drawing.Point(559, 78);
+            this.button_LoadRoom.Name = "button_LoadRoom";
+            this.button_LoadRoom.Size = new System.Drawing.Size(84, 23);
+            this.button_LoadRoom.TabIndex = 11;
+            this.button_LoadRoom.Text = "Загрузить";
+            this.button_LoadRoom.UseVisualStyleBackColor = true;
+            this.button_LoadRoom.Click += new System.EventHandler(this.button_LoadRoom_Click);
             // 
             // Dormytory
             // 
@@ -1083,6 +1249,10 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage_AllInformation.ResumeLayout(false);
+            this.panel_clear.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Clerning)).EndInit();
+            this.panel_UpdateViolation.ResumeLayout(false);
+            this.panel_UpdateViolation.PerformLayout();
             this.panel_Violation.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Violation)).EndInit();
             this.panel_InfoStudent.ResumeLayout(false);
@@ -1091,7 +1261,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Photo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_AllStudents)).EndInit();
             this.tabPage_AddStudent.ResumeLayout(false);
-            this.tabPage_AddStudent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AddPhotoStudent)).EndInit();
             this.panelAddStudent.ResumeLayout(false);
             this.panelAddStudent.PerformLayout();
@@ -1102,17 +1271,17 @@
             this.tabPage_Rooms.ResumeLayout(false);
             this.tabPage_Rooms.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_InfoRoom)).EndInit();
+            this.tabPage_Other.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Space)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuStrip_Violation.ResumeLayout(false);
             this.contextMenuStrip_Room.ResumeLayout(false);
             this.contextMenuStrip_AllViolation.ResumeLayout(false);
-            this.panel_UpdateViolation.ResumeLayout(false);
-            this.panel_UpdateViolation.PerformLayout();
-            this.panel_clear.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Space)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_AddCleaning)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1163,7 +1332,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBox_AddSex;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button_ReloadDate;
         private System.Windows.Forms.ComboBox comboBox_UpdateSex;
         private System.Windows.Forms.RichTextBox richTextBox_AddTakeAction;
@@ -1204,9 +1372,9 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem3;
         private System.Windows.Forms.Panel panel_clear;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView_Clerning;
         private System.Windows.Forms.Button button_Clear;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage_Other;
         private System.Windows.Forms.DataGridView dataGridView_Space;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
@@ -1214,6 +1382,20 @@
         private System.Windows.Forms.TextBox textBox_AddSpaceFloor;
         private System.Windows.Forms.TextBox textBox_AddSpaceName;
         private System.Windows.Forms.Button button_Exit;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataGridView dataGridView_AddCleaning;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox textBoxStudentID;
+        private System.Windows.Forms.Button button_AddCleaning;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_Clearning;
+        private System.Windows.Forms.Button buttonRELOAD;
+        private System.Windows.Forms.TextBox textBox_IDRoom;
+        private System.Windows.Forms.Button button_LoadRoom;
     }
 }
 
